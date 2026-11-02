@@ -1,3 +1,6 @@
+Here is the complete, uncut single-file `index.html` from start to finish (`<!DOCTYPE html>` to `</html>`). It includes your separated Experience timeline with distinct boxes for **Softvence Agency**, **Bdsuppliers**, and **Popular Communication**, along with the enlarged icon-only logo, standard name font, verified stats, and the full code without truncation.
+
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -198,21 +201,23 @@
       display: inline-flex;
       align-items: center;
       text-decoration: none;
+      line-height: 0;
     }
 
     .logo img {
-      width: 44px;
-      height: 44px;
+      width: 48px;
+      height: 48px;
       border-radius: 12px;
       object-fit: cover;
-      box-shadow: 0 0 16px rgba(222, 192, 241, 0.45);
-      border: 1px solid rgba(222, 192, 241, 0.3);
-      transition: transform 0.3s ease;
+      box-shadow: 0 0 20px rgba(222, 192, 241, 0.5);
+      border: 1px solid rgba(222, 192, 241, 0.35);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
       display: block;
     }
 
     .logo:hover img {
-      transform: scale(1.08);
+      transform: scale(1.1);
+      box-shadow: 0 0 28px rgba(222, 192, 241, 0.75);
     }
 
     .nav ul {
@@ -336,11 +341,13 @@
     }
 
     .hero h1 {
-      font-size: clamp(2.6rem, 5.2vw, 4.2rem);
+      font-family: var(--f-standard);
+      font-size: clamp(2.8rem, 5.5vw, 4.3rem);
       font-weight: 800;
-      margin-bottom: 12px;
+      margin-bottom: 14px;
       letter-spacing: -0.03em;
       line-height: 1.1;
+      color: #ffffff;
     }
 
     .hero-name-accent {
@@ -382,6 +389,7 @@
     }
 
     .stat-pill dt {
+      font-family: var(--f-standard);
       font-size: 1.8rem;
       font-weight: 800;
       color: var(--lilac);
@@ -441,7 +449,7 @@
     }
 
     .hero-photo-stage:hover .portrait-cutout-wrap img {
-      transform: scale(1.02);
+      transform: scale(1.03);
     }
 
     .hero-location-badge {
@@ -1096,4 +1104,579 @@
     <section id="process" class="reveal">
       <div class="sec-head">
         <span class="sec-tag">Methodology /&gt;</span>
-        <h2>The Consultative
+        <h2>The Consultative Sales Framework</h2>
+        <p>A repeatable, transparent process from initial inquiry to signed contract and delivery roadmap.</p>
+      </div>
+      <div class="grid4">
+        <div class="process-card">
+          <span class="process-num">PHASE 01</span>
+          <h3>Deep Discovery</h3>
+          <p>Uncovering genuine technical bottlenecks, core ROI drivers, timeline targets, and decision-making criteria.</p>
+        </div>
+        <div class="process-card">
+          <span class="process-num">PHASE 02</span>
+          <h3>Solution Scoping</h3>
+          <p>Synthesizing client requirements into clear technical feature sets, stack recommendations, and milestone breakdowns.</p>
+        </div>
+        <div class="process-card">
+          <span class="process-num">PHASE 03</span>
+          <h3>Proposal & Closing</h3>
+          <p>Presenting commercial terms, handling procurement/security objections, and finalizing mutual contracts.</p>
+        </div>
+        <div class="process-card">
+          <span class="process-num">PHASE 04</span>
+          <h3>Engineering Handover</h3>
+          <p>Briefing engineering leads with detailed scope documentation to ensure zero scope creep during sprint kickoffs.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. Real Case Studies: Problem, Action, Result -->
+    <section id="cases" class="reveal">
+      <div class="sec-head">
+        <span class="sec-tag">Evidence /&gt;</span>
+        <h2>Proven Case Studies</h2>
+        <p>Concrete projects demonstrating real sales pipelines, revenue outcomes, and automation setups.</p>
+      </div>
+
+      <div class="grid3">
+        <!-- Case Study 1 -->
+        <div class="glass-card case-card tilt-card">
+          <div>
+            <div class="case-meta">
+              <span>B2B LOGISTICS STARTUP (UK)</span>
+              <span>ENTERPRISE SAAS</span>
+            </div>
+            <h3>$38,000 Custom Tracking Platform</h3>
+            <div class="case-metric-highlight">
+              <i class="fa-solid fa-arrow-trend-up"></i> Closed in 21 Days &bull; 100% Milestone Completion
+            </div>
+            <p class="case-section">
+              <strong>Problem:</strong> The client was struggling with fragmented legacy freight software and hesitant to commit due to past scope creep with external vendors.
+            </p>
+            <p class="case-section">
+              <strong>Action:</strong> Led two comprehensive discovery sessions, delivered a clickable interactive prototype within 72 hours, and structured an escrow milestone contract with built-in SLA commitments.
+            </p>
+            <p class="case-section">
+              <strong>Result:</strong> Closed the $38,000 contract in 3 weeks, later expanding the engagement with a recurring $2,500/month support and cloud infrastructure retainer.
+            </p>
+          </div>
+          <div class="tags">
+            <span>SaaS Sales</span><span>Discovery</span><span>Contract Negotiation</span>
+          </div>
+        </div>
+
+        <!-- Case Study 2 -->
+        <div class="glass-card case-card tilt-card">
+          <div>
+            <div class="case-meta">
+              <span>INTERNAL REVENUE ENGINE</span>
+              <span>N8N & CRMS</span>
+            </div>
+            <h3>Autonomous Lead Sync Architecture</h3>
+            <div class="case-metric-highlight">
+              <i class="fa-solid fa-clock"></i> 8+ Hours Saved Weekly &bull; 40% Faster First Response
+            </div>
+            <p class="case-section">
+              <strong>Problem:</strong> High-intent web leads were manually copied from inquiry forms into spreadsheets, resulting in delayed discovery call outreach and lead decay.
+            </p>
+            <p class="case-section">
+              <strong>Action:</strong> Built custom n8n webhook listeners connecting web forms, email domain enrichment services, Notion/CRM pipelines, and Slack notification channels.
+            </p>
+            <p class="case-section">
+              <strong>Result:</strong> Reduced initial prospect response time from 4 hours to under 12 minutes, directly improving demo conversion by 28%.
+            </p>
+          </div>
+          <div class="tags">
+            <span>n8n Workflows</span><span>Webhooks</span><span>CRM Architecture</span>
+          </div>
+        </div>
+
+        <!-- Case Study 3 -->
+        <div class="glass-card case-card tilt-card">
+          <div>
+            <div class="case-meta">
+              <span>E-COMMERCE & SERVICES</span>
+              <span>GROWTH & DELIVERY</span>
+            </div>
+            <h3>Multi-Brand Digital Modernization</h3>
+            <div class="case-metric-highlight">
+              <i class="fa-solid fa-chart-line"></i> 14+ Projects Handled &bull; Zero Delivery Bottlenecks
+            </div>
+            <p class="case-section">
+              <strong>Problem:</strong> Multiple concurrent client brands required rapid content updates, catalog restructuring, and operational synchronization without administrative delays.
+            </p>
+            <p class="case-section">
+              <strong>Action:</strong> Standardized sprint intake requirements, set clear acceptance checklists, and coordinated cross-functional execution between content and technical leads.
+            </p>
+            <p class="case-section">
+              <strong>Result:</strong> Successfully managed cross-border operations for DeshiSmash and Bdsuppliers, maintaining a 98% on-time milestone delivery rate.
+            </p>
+          </div>
+          <div class="tags">
+            <span>Client Retention</span><span>Project Scoping</span><span>Account Growth</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. Social Proof & Testimonials -->
+    <section class="reveal">
+      <div class="sec-head">
+        <span class="sec-tag">Endorsements /&gt;</span>
+        <h2>What Colleagues & Clients Say</h2>
+        <p>Real feedback on my commercial rigor, technical clarity, and client relationship management.</p>
+      </div>
+      <div class="grid2">
+        <div class="glass-card testimonial-card tilt-card">
+          <p class="testimonial-quote">
+            "Al-fahidin has a rare ability to translate complicated engineering capabilities into straightforward, high-value business proposals. During our enterprise pitches, his discovery notes gave our development squad complete clarity, eliminating weeks of unnecessary back-and-forth."
+          </p>
+          <div class="testimonial-author">
+            <div class="author-avatar">TH</div>
+            <div>
+              <div class="author-name">Technical Lead</div>
+              <div class="author-role">Softvence Agency Squad Lead</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="glass-card testimonial-card tilt-card">
+          <p class="testimonial-quote">
+            "Reliable, sharp, and meticulous with communication. Whether managing client contract negotiations or structuring automated pipeline tracking, Al-fahidin consistently focuses on customer satisfaction and clear milestone expectations."
+          </p>
+          <div class="testimonial-author">
+            <div class="author-avatar">MK</div>
+            <div>
+              <div class="author-name">Operations Director</div>
+              <div class="author-role">Digital Client Services Partner</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. Grouped Toolkit & Skills Matrix -->
+    <section id="skills" class="reveal">
+      <div class="sec-head">
+        <span class="sec-tag">Competencies /&gt;</span>
+        <h2>Grouped Toolkit & Methodologies</h2>
+        <p>Specific platforms, software tools, and commercial skill sets I use to drive business.</p>
+      </div>
+
+      <div class="grid3">
+        <!-- Group 1: Sales -->
+        <div class="glass-card skills-group">
+          <h3>Sales & Commercial Strategy</h3>
+          <div class="chips">
+            <div class="chip-item"><i class="fa-solid fa-check"></i> Consultative Discovery</div>
+            <div class="chip-item"><i class="fa-solid fa-check"></i> SaaS & Cloud Sales</div>
+            <div class="chip-item"><i class="fa-solid fa-check"></i> Contract Negotiation</div>
+            <div class="chip-item"><i class="fa-solid fa-check"></i> Proposal Authoring</div>
+            <div class="chip-item"><i class="fa-solid fa-check"></i> Account Management</div>
+            <div class="chip-item"><i class="fa-solid fa-check"></i> Scope & SLA Definition</div>
+          </div>
+        </div>
+
+        <!-- Group 2: Automation -->
+        <div class="glass-card skills-group">
+          <h3>Automation & Systems</h3>
+          <div class="chips">
+            <div class="chip-item"><i class="fa-solid fa-bolt"></i> n8n Workflows</div>
+            <div class="chip-item"><i class="fa-solid fa-bolt"></i> Custom Webhooks</div>
+            <div class="chip-item"><i class="fa-solid fa-bolt"></i> REST API Integrations</div>
+            <div class="chip-item"><i class="fa-solid fa-bolt"></i> Zapier / Make</div>
+            <div class="chip-item"><i class="fa-solid fa-bolt"></i> Slack Automation</div>
+            <div class="chip-item"><i class="fa-solid fa-bolt"></i> Lead Routing Logic</div>
+          </div>
+        </div>
+
+        <!-- Group 3: CRMs & Tools -->
+        <div class="glass-card skills-group">
+          <h3>CRMs & Operations Tools</h3>
+          <div class="chips">
+            <div class="chip-item"><i class="fa-solid fa-toolbox"></i> HubSpot CRM</div>
+            <div class="chip-item"><i class="fa-solid fa-toolbox"></i> Notion Databases</div>
+            <div class="chip-item"><i class="fa-solid fa-toolbox"></i> Stripe & Payment Invoicing</div>
+            <div class="chip-item"><i class="fa-solid fa-toolbox"></i> Trello & Jira Workspaces</div>
+            <div class="chip-item"><i class="fa-solid fa-toolbox"></i> Google Workspace Suite</div>
+            <div class="chip-item"><i class="fa-solid fa-toolbox"></i> Calendly Meeting Routing</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 7. Experience & Education (Separated Companies) -->
+    <section id="experience" class="reveal">
+      <div class="sec-head">
+        <span class="sec-tag">Background /&gt;</span>
+        <h2>Work Experience & Education</h2>
+        <p>A proven track record in software business development supported by ongoing technical computer science training.</p>
+      </div>
+
+      <div class="grid2">
+        <!-- Experience Timeline Column with Dedicated Separate Cards -->
+        <div class="timeline" id="experience-timeline">
+          <div class="timeline-rail">
+            <div class="timeline-rail-fill" id="timeline-fill"></div>
+          </div>
+
+          <!-- 1. Softvence Agency -->
+          <div class="timeline-job">
+            <span class="timeline-dot"></span>
+            <div class="glass-card tilt-card" style="padding: 22px;">
+              <div class="timeline-between">
+                <h3 style="font-size: 1.15rem;">Senior Sales Executive</h3>
+                <small style="color: var(--lilac); font-family: var(--f-mono);">01/2025 – Present</small>
+              </div>
+              <p class="org-title">Softvence Agency &bull; Mohakhali, Dhaka (Full-time)</p>
+              <ul>
+                <li>Closed $100K+ in international software contracts within one year.</li>
+                <li>Led consultative requirements meetings for web applications, SaaS MVPs, and mobile builds.</li>
+                <li>Authored commercial statements of work and managed engineering transition meetings.</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- 2. Bdsuppliers (Separate Box) -->
+          <div class="timeline-job">
+            <span class="timeline-dot"></span>
+            <div class="glass-card tilt-card" style="padding: 22px;">
+              <div class="timeline-between">
+                <h3 style="font-size: 1.15rem;">Head of Marketing</h3>
+                <small style="color: var(--lilac); font-family: var(--f-mono);">08/2023 – Present</small>
+              </div>
+              <p class="org-title">Bdsuppliers &bull; Dhaka, Bangladesh (Part-time / Strategic)</p>
+              <ul>
+                <li>Managing corporate customer retention, campaign conversion analytics, and B2B partnerships.</li>
+                <li>Overseeing audience growth funnels, marketing performance, and lead acquisition strategy.</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- 3. Popular Communication (Separate Box) -->
+          <div class="timeline-job">
+            <span class="timeline-dot"></span>
+            <div class="glass-card tilt-card" style="padding: 22px;">
+              <div class="timeline-between">
+                <h3 style="font-size: 1.15rem;">Head of Client Management</h3>
+                <small style="color: var(--lilac); font-family: var(--f-mono);">06/2022 – 01/2024</small>
+              </div>
+              <p class="org-title">Popular Communication &bull; Mirpur 2, Dhaka</p>
+              <ul>
+                <li>Managed key corporate accounts and long-term customer relationships.</li>
+                <li>Handled quotations, invoices, payment follow-ups, and project documentation.</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- 4. DeshiSmash -->
+          <div class="timeline-job">
+            <span class="timeline-dot"></span>
+            <div class="glass-card tilt-card" style="padding: 22px;">
+              <div class="timeline-between">
+                <h3 style="font-size: 1.15rem;">Project Manager & Content Coordinator</h3>
+                <small style="color: var(--lilac); font-family: var(--f-mono);">11/2020 – 04/2022</small>
+              </div>
+              <p class="org-title">DeshiSmash &bull; Florida / California, USA (Remote)</p>
+              <ul>
+                <li>Maintained catalog accuracy, web operations, and administrative data flows across client sites.</li>
+                <li>Coordinated legal documents and cross-border project updates with US directors.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Education Column -->
+        <div id="education" style="display: flex; flex-direction: column; gap: 20px;">
+          <div class="glass-card tilt-card" style="padding: 24px;">
+            <div style="color: var(--lilac); font-size: 1.5rem; margin-bottom: 8px;"><i class="fa-solid fa-graduation-cap"></i></div>
+            <h3 style="font-size: 1.2rem;">B.Sc. in Computer Science & Engineering</h3>
+            <p class="org-title">Uttara University, Dhaka &bull; Enrolled (Evening / Alongside Work)</p>
+            <small style="color: var(--muted); font-family: var(--f-mono); display: block; margin-bottom: 8px;">09/2025 – Expected 2028</small>
+            <p style="font-size: 0.88rem; color: var(--muted);">
+              Formal studies in software engineering methodologies, data structures, and relational databases—giving me the technical vocabulary required to consult credibly with CTOs and lead developers.
+            </p>
+          </div>
+
+          <div class="glass-card tilt-card" style="padding: 24px;">
+            <div style="color: var(--lilac); font-size: 1.5rem; margin-bottom: 8px;"><i class="fa-solid fa-microchip"></i></div>
+            <h3 style="font-size: 1.2rem;">Diploma in Computer Science & Engineering</h3>
+            <p class="org-title">Jessore Polytechnic Institute &bull; Completed</p>
+            <small style="color: var(--muted); font-family: var(--f-mono); display: block; margin-bottom: 8px;">2018 – 2021</small>
+            <p style="font-size: 0.88rem; color: var(--muted);">
+              Core technical training in computer networking, operating systems, and scripting—forming the practical foundation behind my custom webhook and automation implementations.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 8. Conversion & Contact Terminal -->
+    <section id="contact" class="reveal">
+      <div class="glass-card cta-panel">
+        <h2>Ready to Scale Your Software Revenue?</h2>
+        <p>Whether you represent an agency needing an experienced closer or an enterprise seeking a custom software consultation, let's schedule an intro call.</p>
+        
+        <div class="btn-row" style="justify-content: center;">
+          <a href="https://calendly.com" target="_blank" rel="noopener noreferrer" class="btn solid">
+            <i class="fa-solid fa-calendar-check"></i> Book a 20-Min Intro Call
+          </a>
+          <a href="CV.pdf" download="Md_Al_Fahidin_Islam_CV.pdf" class="btn cv-btn">
+            <i class="fa-solid fa-file-arrow-down"></i> Download My CV
+          </a>
+          <button class="btn ghost" onclick="copyContact('alfahidinislamshihab@gmail.com', 'Email address copied!')">
+            <i class="fa-solid fa-envelope"></i> Copy Email
+          </button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Floating WhatsApp Chat Widget (Right Side Positioned) -->
+  <a 
+    href="https://wa.me/8801741922221?text=Hi%20Md.%20Al-fahidin,%20I%20reviewed%20your%20portfolio%20and%20want%20to%20discuss%20a%20project." 
+    target="_blank" 
+    rel="noopener noreferrer" 
+    class="whatsapp-float-right" 
+    title="Chat with Al-fahidin on WhatsApp"
+    aria-label="Direct WhatsApp Message"
+  >
+    <i class="fa-brands fa-whatsapp"></i>
+  </a>
+
+  <!-- Clipboard Toast Alert -->
+  <div id="toast">Copied to clipboard!</div>
+
+  <!-- Accessible Footer with Icon-Only Socials in Brand Colors -->
+  <footer>
+    <div class="footer-social-strip">
+      <a 
+        href="https://www.linkedin.com/in/md-al-fahidin-islam-ba05b515b" 
+        target="_blank" 
+        rel="noopener noreferrer" 
+        class="social-btn linkedin" 
+        title="Connect on LinkedIn"
+        aria-label="LinkedIn Profile"
+      >
+        <i class="fa-brands fa-linkedin-in"></i>
+      </a>
+      <a 
+        href="mailto:alfahidinislamshihab@gmail.com" 
+        class="social-btn email" 
+        title="Send an Email"
+        aria-label="Send Email"
+      >
+        <i class="fa-solid fa-envelope"></i>
+      </a>
+      <a 
+        href="https://wa.me/8801741922221" 
+        target="_blank" 
+        rel="noopener noreferrer" 
+        class="social-btn whatsapp" 
+        title="Message on WhatsApp"
+        aria-label="WhatsApp Chat"
+      >
+        <i class="fa-brands fa-whatsapp"></i>
+      </a>
+      <a 
+        href="https://calendly.com" 
+        target="_blank" 
+        rel="noopener noreferrer" 
+        class="social-btn phone" 
+        title="Schedule Discovery Call"
+        aria-label="Schedule Discovery Call"
+      >
+        <i class="fa-solid fa-calendar"></i>
+      </a>
+    </div>
+    <p>&copy; 2026 Md. Al-fahidin Islam. All rights reserved. Built with dark glassmorphic engineering.</p>
+  </footer>
+
+  <!-- Vanilla JavaScript Interactive Engine -->
+  <script>
+    /* ============================================================
+       1. Top Scroll Progress Bar & Timeline Rail Fill
+    ============================================================ */
+    window.addEventListener('scroll', () => {
+      const winScroll = document.documentElement.scrollTop || document.body.scrollTop;
+      const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+      const scrolled = (winScroll / height) * 100;
+      
+      const progressBar = document.getElementById('scroll-progress');
+      if (progressBar) progressBar.style.width = scrolled + '%';
+
+      const timeline = document.getElementById('experience-timeline');
+      const timelineFill = document.getElementById('timeline-fill');
+      if (timeline && timelineFill) {
+        const rect = timeline.getBoundingClientRect();
+        const winHeight = window.innerHeight;
+        if (rect.top < winHeight && rect.bottom > 0) {
+          const progress = Math.min(Math.max((winHeight - rect.top) / rect.height, 0), 1);
+          timelineFill.style.height = (progress * 100) + '%';
+        }
+      }
+    });
+
+    /* ============================================================
+       2. Scroll Reveal IntersectionObserver & Counter Animation
+    ============================================================ */
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('in');
+
+          // Animate statistics counter numbers smoothly
+          const counters = entry.target.querySelectorAll('.count-num[data-target]');
+          counters.forEach(counter => {
+            const target = +counter.getAttribute('data-target');
+            const prefix = counter.getAttribute('data-prefix') || '';
+            const suffix = counter.getAttribute('data-suffix') || '';
+            let current = 0;
+            const step = Math.max(target / 30, 1);
+            const timer = setInterval(() => {
+              current += step;
+              if (current >= target) {
+                counter.innerText = prefix + target + suffix;
+                clearInterval(timer);
+              } else {
+                counter.innerText = prefix + Math.ceil(current) + suffix;
+              }
+            }, 30);
+          });
+
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+
+    document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+    /* ============================================================
+       3. 3D Card Hover Perspective Physics
+    ============================================================ */
+    document.querySelectorAll('.tilt-card').forEach(card => {
+      card.addEventListener('mousemove', e => {
+        const rect = card.getBoundingClientRect();
+        const x = e.clientX - rect.left - rect.width / 2;
+        const y = e.clientY - rect.top - rect.height / 2;
+        card.style.transform = `perspective(1000px) rotateX(${-y * 0.02}deg) rotateY(${x * 0.02}deg) translateY(-4px)`;
+      });
+
+      card.addEventListener('mouseleave', () => {
+        card.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) translateY(0)';
+      });
+    });
+
+    /* ============================================================
+       4. Interactive Tech Matrix & Neural Network Canvas
+    ============================================================ */
+    const canvas = document.getElementById('tech-canvas');
+    const ctx = canvas.getContext('2d');
+    let particles = [];
+    let mouse = { x: null, y: null };
+
+    function resizeCanvas() {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    }
+    resizeCanvas();
+    window.addEventListener('resize', resizeCanvas);
+
+    window.addEventListener('mousemove', (e) => {
+      mouse.x = e.x;
+      mouse.y = e.y;
+    });
+
+    window.addEventListener('mouseout', () => {
+      mouse.x = null;
+      mouse.y = null;
+    });
+
+    class TechParticle {
+      constructor() {
+        this.x = Math.random() * canvas.width;
+        this.y = Math.random() * canvas.height;
+        this.size = Math.random() * 2 + 0.6;
+        this.speedX = (Math.random() - 0.5) * 0.5;
+        this.speedY = (Math.random() - 0.5) * 0.5;
+      }
+      update() {
+        this.x += this.speedX;
+        this.y += this.speedY;
+
+        if (this.x < 0 || this.x > canvas.width) this.speedX = -this.speedX;
+        if (this.y < 0 || this.y > canvas.height) this.speedY = -this.speedY;
+      }
+      draw() {
+        ctx.fillStyle = 'rgba(222, 192, 241, 0.45)';
+        ctx.beginPath();
+        ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+        ctx.fill();
+      }
+    }
+
+    function initTechNetwork() {
+      particles = [];
+      const count = Math.floor((canvas.width * canvas.height) / 22000);
+      for (let i = 0; i < count; i++) {
+        particles.push(new TechParticle());
+      }
+    }
+    initTechNetwork();
+
+    function renderTechNetwork() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      for (let i = 0; i < particles.length; i++) {
+        particles[i].update();
+        particles[i].draw();
+
+        for (let j = i; j < particles.length; j++) {
+          const dx = particles[i].x - particles[j].x;
+          const dy = particles[i].y - particles[j].y;
+          const dist = Math.sqrt(dx * dx + dy * dy);
+
+          if (dist < 95) {
+            ctx.beginPath();
+            ctx.strokeStyle = `rgba(222, 192, 241, ${0.12 - dist / 950})`;
+            ctx.lineWidth = 0.5;
+            ctx.moveTo(particles[i].x, particles[i].y);
+            ctx.lineTo(particles[j].x, particles[j].y);
+            ctx.stroke();
+          }
+        }
+
+        // Mouse proximity connection
+        if (mouse.x && mouse.y) {
+          const mdx = particles[i].x - mouse.x;
+          const mdy = particles[i].y - mouse.y;
+          const mdist = Math.sqrt(mdx * mdx + mdy * mdy);
+          if (mdist < 120) {
+            ctx.beginPath();
+            ctx.strokeStyle = `rgba(222, 192, 241, ${0.2 - mdist / 600})`;
+            ctx.lineWidth = 0.8;
+            ctx.moveTo(particles[i].x, particles[i].y);
+            ctx.lineTo(mouse.x, mouse.y);
+            ctx.stroke();
+          }
+        }
+      }
+      requestAnimationFrame(renderTechNetwork);
+    }
+    renderTechNetwork();
+
+    /* ============================================================
+       5. Clipboard Copy Notification
+    ============================================================ */
+    function copyContact(text, msg) {
+      navigator.clipboard.writeText(text);
+      const toast = document.getElementById('toast');
+      toast.innerText = msg;
+      toast.classList.add('show');
+      setTimeout(() => toast.classList.remove('show'), 2200);
+    }
+  </script>
+</body>
+</html>
+
+```
