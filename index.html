@@ -4,8 +4,9 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <title>Md. Al-fahidin Islam | Senior Sales Executive & Tech Consultant</title>
-  />
-</a>
+
+  <!-- Favicon Logo -->
+  <link rel="icon" type="image/jpeg" href="Logo.jpg" />
 
   <!-- Google Fonts & Font Awesome Icons -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -200,23 +201,32 @@
     }
 
     .logo {
-      font-family: var(--f-display);
-      font-weight: 800;
-      font-size: 1.3rem;
-      color: var(--lilac);
-      letter-spacing: 0.04em;
       display: inline-flex;
       align-items: center;
-      gap: 8px;
+      gap: 12px;
+      text-decoration: none;
     }
 
-    .logo span {
-      display: inline-block;
-      width: 8px;
-      height: 8px;
-      border-radius: 50%;
-      background: var(--lilac);
-      box-shadow: 0 0 10px var(--lilac);
+    .logo img {
+      width: 38px;
+      height: 38px;
+      border-radius: 10px;
+      object-fit: cover;
+      box-shadow: 0 0 16px rgba(222, 192, 241, 0.45);
+      border: 1px solid rgba(222, 192, 241, 0.3);
+      transition: transform 0.3s ease;
+    }
+
+    .logo:hover img {
+      transform: scale(1.08);
+    }
+
+    .logo-text {
+      font-family: var(--f-display);
+      font-weight: 800;
+      font-size: 1.25rem;
+      color: var(--lilac);
+      letter-spacing: 0.04em;
     }
 
     .nav ul {
@@ -302,7 +312,7 @@
       flex-wrap: wrap;
     }
 
-    /* Hero Section with Cutout Image & Pulsing Glow Halo */
+    /* Hero Section */
     .hero {
       display: grid;
       grid-template-columns: 1.2fr 0.8fr;
@@ -440,7 +450,7 @@
       transform: scale(1.03);
     }
 
-    /* Updated Location Badge: Dhaka, Bangladesh only */
+    /* Location Badge: Dhaka, Bangladesh */
     .hero-location-badge {
       position: relative;
       z-index: 3;
@@ -452,7 +462,7 @@
       color: var(--muted);
       background: rgba(18, 4, 34, 0.85);
       border: 1px solid var(--line);
-      padding: 6px 16px;
+      padding: 6px 18px;
       border-radius: 999px;
       backdrop-filter: blur(10px);
     }
@@ -618,7 +628,7 @@
       background: rgba(30, 5, 58, 0.5);
     }
 
-    /* Experience Timeline with Dynamic JS Track Fill */
+    /* Experience Timeline with Dynamic Track Fill */
     .timeline {
       position: relative;
       padding-left: 32px;
@@ -782,7 +792,7 @@
       border: 1px solid rgba(222, 192, 241, 0.15);
     }
 
-    /* Original Brand Colors & Glows */
+    /* Original Brand Colors & Hover Glows */
     .social-btn.linkedin {
       color: #0a66c2;
       border-color: rgba(10, 102, 194, 0.35);
@@ -916,7 +926,7 @@
   <!-- Top Scroll Progress Indicator -->
   <div id="scroll-progress"></div>
 
-  <!-- Interactive JavaScript Background: Tech Grid, Data Nodes & Digital Pulse -->
+  <!-- Interactive Tech Grid & Neural Network Canvas -->
   <canvas id="tech-canvas"></canvas>
 
   <!-- Ambient Glowing Orbs -->
@@ -929,7 +939,8 @@
   <!-- Navigation -->
   <nav class="nav">
     <a href="#home" class="logo">
-      <span></span> AFI
+      <img src="Logo.jpg" alt="Md. Al-fahidin Islam Logo" />
+      <span class="logo-text">AFI</span>
     </a>
     <ul>
       <li><a href="#services">Services</a></li>
@@ -996,7 +1007,7 @@
         <div class="portrait-cutout-wrap">
           <img src="WhatsApp_Image_2026-11-02_at_11.40.53_PM-removebg-preview.png" onerror="this.src='profile.jpg'" alt="Md. Al-fahidin Islam" />
         </div>
-        <!-- Location set to Dhaka, Bangladesh -->
+        <!-- Location set strictly to Dhaka, Bangladesh -->
         <div class="hero-location-badge">
           <i class="fa-solid fa-location-dot" style="color: var(--lilac);"></i>
           <span>Dhaka, Bangladesh</span>
@@ -1218,7 +1229,7 @@
   <!-- Clipboard Toast Alert -->
   <div id="toast">Copied to clipboard!</div>
 
-  <!-- Footer with Icon-Only Socials in Brand Colors -->
+  <!-- Footer with Icon-Only Socials in Original Brand Colors -->
   <footer>
     <div class="footer-social-strip">
       <a href="https://www.linkedin.com/in/md-al-fahidin-islam-ba05b515b" target="_blank" rel="noopener noreferrer" class="social-btn linkedin" title="LinkedIn">
@@ -1367,6 +1378,7 @@
         particles[i].update();
         particles[i].draw();
 
+        // Connect nearby nodes
         for (let j = i; j < particles.length; j++) {
           const dx = particles[i].x - particles[j].x;
           const dy = particles[i].y - particles[j].y;
@@ -1382,6 +1394,7 @@
           }
         }
 
+        // Proximity connection to mouse
         if (mouse.x && mouse.y) {
           const mdx = particles[i].x - mouse.x;
           const mdy = particles[i].y - mouse.y;
