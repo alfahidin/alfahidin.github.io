@@ -8,10 +8,10 @@
   <!-- Favicon Logo -->
   <link rel="icon" type="image/jpeg" href="Logo.jpg" />
 
-  <!-- Google Fonts & Font Awesome Icons -->
+  <!-- Google Fonts: Plus Jakarta Sans (Standard/Modern), Inter & JetBrains Mono -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;700;800&family=JetBrains+Mono:wght@400;500;700&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
 
   <style>
@@ -26,8 +26,7 @@
       --line: rgba(222, 192, 241, 0.16);
       --panel: rgba(30, 5, 58, 0.65);
       --panel-hover: rgba(60, 9, 108, 0.55);
-      --f-display: "Bricolage Grotesque", sans-serif;
-      --f-body: "Manrope", sans-serif;
+      --f-standard: 'Plus Jakarta Sans', 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
       --f-mono: "JetBrains Mono", monospace;
       --radius-lg: 24px;
       --transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
@@ -47,7 +46,7 @@
     body {
       background-color: var(--ink);
       color: var(--text);
-      font-family: var(--f-body), system-ui, sans-serif;
+      font-family: var(--f-standard);
       line-height: 1.65;
       overflow-x: hidden;
       min-height: 100vh;
@@ -131,10 +130,10 @@
     }
 
     h1, h2, h3 {
-      font-family: var(--f-display), sans-serif;
+      font-family: var(--f-standard);
       line-height: 1.15;
       color: var(--lilac);
-      letter-spacing: -0.01em;
+      letter-spacing: -0.02em;
     }
 
     a {
@@ -200,7 +199,7 @@
       border-radius: 999px;
     }
 
-    /* Logo-Only Icon with Enlarged Dimensions & Hover Glow */
+    /* Enlarged Logo Only */
     .logo {
       display: inline-flex;
       align-items: center;
@@ -344,11 +343,21 @@
       50% { opacity: 0.35; transform: scale(0.85); }
     }
 
+    /* Standardized Clean Name Font */
     .hero h1 {
-      font-size: clamp(2.8rem, 5.8vw, 4.4rem);
+      font-family: var(--f-standard);
+      font-size: clamp(2.8rem, 5.5vw, 4.3rem);
       font-weight: 800;
-      margin-bottom: 12px;
-      letter-spacing: -0.02em;
+      margin-bottom: 14px;
+      letter-spacing: -0.03em;
+      line-height: 1.1;
+      color: #ffffff;
+    }
+
+    .hero-name-accent {
+      background: linear-gradient(135deg, #ffffff 40%, var(--lilac) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
     }
 
     .hero-role {
@@ -357,6 +366,7 @@
       font-weight: 600;
       margin-bottom: 14px;
       max-width: 38ch;
+      letter-spacing: -0.01em;
     }
 
     .hero-intro {
@@ -383,10 +393,11 @@
     }
 
     .stat-pill dt {
-      font-family: var(--f-display);
+      font-family: var(--f-standard);
       font-size: 1.8rem;
       font-weight: 800;
       color: var(--lilac);
+      letter-spacing: -0.02em;
     }
 
     .stat-pill dd {
@@ -460,6 +471,7 @@
       padding: 6px 18px;
       border-radius: 999px;
       backdrop-filter: blur(10px);
+      font-weight: 500;
     }
 
     /* Section Headers */
@@ -481,6 +493,7 @@
       font-size: clamp(2rem, 4vw, 2.85rem);
       font-weight: 800;
       margin-bottom: 8px;
+      letter-spacing: -0.02em;
     }
 
     .sec-head p {
@@ -523,6 +536,8 @@
     .service-card h3 {
       font-size: 1.25rem;
       color: #fff;
+      font-weight: 700;
+      letter-spacing: -0.01em;
     }
 
     .service-card p {
@@ -549,6 +564,7 @@
       font-weight: 600;
       cursor: pointer;
       transition: var(--transition);
+      font-family: var(--f-standard);
     }
 
     .filter-btn.active, .filter-btn:hover {
@@ -601,6 +617,7 @@
       font-size: 1.25rem;
       color: #fff;
       margin-bottom: 4px;
+      font-weight: 700;
     }
 
     .work-card p {
@@ -621,6 +638,7 @@
       border-radius: 999px;
       color: var(--lilac);
       background: rgba(30, 5, 58, 0.5);
+      font-weight: 500;
     }
 
     /* Experience Timeline with Dynamic Track Fill */
@@ -755,6 +773,7 @@
     .cta-panel h2 {
       font-size: clamp(2rem, 4.5vw, 3rem);
       margin-bottom: 12px;
+      letter-spacing: -0.02em;
     }
 
     .cta-panel p {
@@ -933,7 +952,6 @@
 
   <!-- Navigation -->
   <nav class="nav">
-    <!-- Enlarged Logo Only (Text Removed) -->
     <a href="#home" class="logo" title="Md. Al-fahidin Islam">
       <img src="Logo.jpg" alt="Logo" />
     </a>
@@ -960,7 +978,10 @@
         <div class="pill">
           <span></span> Open to new enterprise projects & partnerships
         </div>
-        <h1>Md. Al-fahidin Islam</h1>
+        <h1>
+          Md. Al-fahidin <br />
+          <span class="hero-name-accent">Islam</span>
+        </h1>
         <p class="hero-role">Senior Sales Executive: Software, Web &amp; Mobile Apps, SaaS</p>
         <p class="hero-intro">
           I sell and coordinate software projects for international clients, from the first discovery call and customized proposal to seamless handover with technical squads.
@@ -1002,7 +1023,6 @@
         <div class="portrait-cutout-wrap">
           <img src="WhatsApp_Image_2026-11-02_at_11.40.53_PM-removebg-preview.png" onerror="this.src='profile.jpg'" alt="Md. Al-fahidin Islam" />
         </div>
-        <!-- Location set strictly to Dhaka, Bangladesh -->
         <div class="hero-location-badge">
           <i class="fa-solid fa-location-dot" style="color: var(--lilac);"></i>
           <span>Dhaka, Bangladesh</span>
