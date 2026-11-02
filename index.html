@@ -3,28 +3,34 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Md. Al-fahidin Islam | Senior Sales Executive & Tech Consultant</title>
+  <title>Md Al-fahidin Islam | Senior Enterprise Sales & Tech Strategy</title>
 
   <!-- Google Fonts & Font Awesome Icons -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;700;800&family=JetBrains+Mono:wght@400;600&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
 
   <style>
     :root {
-      --ink: #240046;
-      --royal: #3c096c;
-      --lilac: #dec0f1;
-      --text: #f4e9fa;
-      --muted: #c9a9de;
-      --line: rgba(222, 192, 241, 0.2);
-      --panel: rgba(60, 9, 108, 0.55);
-      --f-display: 'Bricolage Grotesque', sans-serif;
-      --f-body: 'Manrope', sans-serif;
-      --f-mono: 'JetBrains Mono', monospace;
-      --card-radius: 20px;
-      --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+      --bg-pitch: #040207;
+      --bg-card: rgba(23, 7, 38, 0.45);
+      --bg-card-hover: rgba(36, 11, 58, 0.65);
+      --purple-deep: #1d0333;
+      --purple-core: #3c096c;
+      --purple-accent: #7b2cbf;
+      --lilac-neon: #dec0f1;
+      --lilac-glow: rgba(222, 192, 241, 0.35);
+      --emerald: #10b981;
+      --border-subtle: 1px solid rgba(222, 192, 241, 0.12);
+      --border-bright: 1px solid rgba(222, 192, 241, 0.4);
+      --text-white: #faf5ff;
+      --text-muted: #b8a2c8;
+      --font-display: 'Space Grotesk', sans-serif;
+      --font-body: 'Plus Jakarta Sans', sans-serif;
+      --font-mono: 'JetBrains Mono', monospace;
+      --radius-lg: 24px;
+      --transition-smooth: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
     }
 
     * {
@@ -35,30 +41,17 @@
     }
 
     body {
-      background-color: var(--ink);
-      color: var(--text);
-      font-family: var(--f-body);
-      line-height: 1.65;
+      background-color: var(--bg-pitch);
+      color: var(--text-white);
+      font-family: var(--font-body);
+      line-height: 1.6;
       overflow-x: hidden;
       min-height: 100vh;
       position: relative;
     }
 
-    /* Top Scroll Progress Bar */
-    #scroll-progress {
-      position: fixed;
-      top: 0;
-      left: 0;
-      height: 3px;
-      background: linear-gradient(90deg, var(--royal), var(--lilac));
-      width: 0%;
-      z-index: 1000;
-      box-shadow: 0 0 10px var(--lilac);
-      transition: width 0.1s ease-out;
-    }
-
-    /* Particle Background Canvas */
-    #bg-canvas {
+    /* Ambient Background Glow */
+    .ambient-canvas {
       position: fixed;
       top: 0;
       left: 0;
@@ -68,83 +61,76 @@
       pointer-events: none;
     }
 
-    /* Ambient Dynamic Mesh Background */
-    .aurora-bg {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100vw;
-      height: 100vh;
-      z-index: -2;
-      pointer-events: none;
-      overflow: hidden;
-    }
-
-    .aurora-orb {
+    .ambient-glow-orb {
       position: absolute;
       border-radius: 50%;
       filter: blur(140px);
-      opacity: 0.45;
-      animation: drift 20s infinite alternate ease-in-out;
+      opacity: 0.38;
+      animation: ambientDrift 22s infinite alternate ease-in-out;
     }
 
-    .orb-1 {
-      width: 550px;
-      height: 550px;
-      background: radial-gradient(circle, #7b2cbf, var(--royal));
-      top: -120px;
-      left: -80px;
+    .orb-purple-1 {
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, var(--purple-accent), var(--purple-core));
+      top: -150px;
+      left: -100px;
     }
 
-    .orb-2 {
-      width: 480px;
-      height: 480px;
-      background: radial-gradient(circle, var(--royal), #10002b);
+    .orb-purple-2 {
+      width: 500px;
+      height: 500px;
+      background: radial-gradient(circle, #5a189a, var(--bg-pitch));
       bottom: 5%;
-      right: -80px;
-      animation-duration: 25s;
+      right: -100px;
+      animation-duration: 28s;
     }
 
-    .orb-3 {
-      width: 360px;
-      height: 360px;
-      background: radial-gradient(circle, var(--lilac), #5a189a);
-      top: 40%;
-      left: 35%;
-      opacity: 0.2;
-    }
-
-    @keyframes drift {
+    @keyframes ambientDrift {
       0% { transform: translate(0, 0) scale(1); }
-      50% { transform: translate(40px, 30px) scale(1.06); }
-      100% { transform: translate(-30px, 50px) scale(0.95); }
+      50% { transform: translate(60px, 40px) scale(1.08); }
+      100% { transform: translate(-40px, 70px) scale(0.95); }
     }
 
-    /* Glass Cards */
-    .glass-card {
-      background: var(--panel);
-      backdrop-filter: blur(14px);
-      -webkit-backdrop-filter: blur(14px);
-      border: 1px solid var(--line);
-      border-radius: var(--card-radius);
-      box-shadow: 0 10px 32px rgba(0, 0, 0, 0.4);
-      transition: var(--transition);
-      transform-style: preserve-3d;
-      will-change: transform;
+    /* Scroll Indicator */
+    #scroll-progress {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--purple-accent), var(--lilac-neon));
+      width: 0%;
+      z-index: 1000;
+      box-shadow: 0 0 12px var(--lilac-neon);
+      transition: width 0.1s ease-out;
     }
 
-    .glass-card:hover {
-      border-color: var(--lilac);
-      box-shadow: 0 14px 40px rgba(0, 0, 0, 0.5), 0 0 25px rgba(222, 192, 241, 0.25);
+    /* Glass Panels */
+    .glass-panel {
+      background: var(--bg-card);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: var(--border-subtle);
+      border-radius: var(--radius-lg);
+      box-shadow: 0 12px 36px rgba(0, 0, 0, 0.5);
+      transition: var(--transition-smooth);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .glass-panel:hover {
+      background: var(--bg-card-hover);
+      border-color: rgba(222, 192, 241, 0.3);
+      box-shadow: 0 18px 45px rgba(0, 0, 0, 0.65), 0 0 24px var(--lilac-glow);
     }
 
     /* Navigation */
     nav {
       position: sticky;
-      top: 14px;
+      top: 16px;
       z-index: 100;
-      max-width: 1080px;
-      margin: 14px auto 0;
+      max-width: 1140px;
+      margin: 0 auto;
       padding: 0 20px;
     }
 
@@ -152,360 +138,415 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 10px 18px 10px 24px;
-      background: rgba(36, 0, 70, 0.85);
-      backdrop-filter: blur(16px);
-      -webkit-backdrop-filter: blur(16px);
-      border: 1px solid var(--line);
+      padding: 12px 28px;
+      background: rgba(14, 4, 25, 0.75);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: var(--border-subtle);
       border-radius: 9999px;
     }
 
-    .logo {
-      font-family: var(--f-display);
-      font-weight: 800;
-      font-size: 1.25rem;
-      color: var(--lilac);
+    .nav-logo {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
       text-decoration: none;
-      letter-spacing: 0.04em;
+      color: var(--text-white);
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 1.15rem;
+      letter-spacing: -0.5px;
+    }
+
+    .nav-logo-badge {
+      width: 32px;
+      height: 32px;
+      border-radius: 8px;
+      background: linear-gradient(135deg, var(--purple-accent), var(--lilac-neon));
+      color: var(--bg-pitch);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      font-size: 0.9rem;
     }
 
     .nav-links {
       display: flex;
-      gap: 22px;
+      gap: 26px;
       list-style: none;
     }
 
     .nav-links a {
-      color: var(--muted);
+      color: var(--text-muted);
       text-decoration: none;
       font-size: 0.9rem;
-      font-weight: 600;
-      transition: var(--transition);
+      font-weight: 500;
+      transition: var(--transition-smooth);
     }
 
     .nav-links a:hover {
-      color: #fff;
+      color: var(--lilac-neon);
+      text-shadow: 0 0 12px var(--lilac-glow);
     }
 
-    /* Buttons */
+    /* Interactive Buttons */
     .btn {
       display: inline-flex;
       align-items: center;
-      gap: 8px;
-      padding: 12px 24px;
+      gap: 10px;
+      padding: 12px 26px;
       border-radius: 999px;
-      font-weight: 700;
+      font-weight: 600;
       font-size: 0.92rem;
       text-decoration: none;
-      border: 1px solid var(--lilac);
-      transition: transform 0.2s, background 0.2s, color 0.2s, box-shadow 0.2s;
+      transition: var(--transition-smooth);
       cursor: pointer;
+      border: none;
     }
 
-    .btn:hover {
+    .btn-glow {
+      background: linear-gradient(135deg, var(--purple-accent), var(--lilac-neon));
+      color: var(--bg-pitch);
+      box-shadow: 0 4px 20px rgba(123, 44, 191, 0.45);
+      font-weight: 700;
+    }
+
+    .btn-glow:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 30px rgba(222, 192, 241, 0.55);
+    }
+
+    .btn-outline {
+      background: rgba(255, 255, 255, 0.03);
+      color: var(--text-white);
+      border: var(--border-subtle);
+    }
+
+    .btn-outline:hover {
+      background: rgba(255, 255, 255, 0.08);
+      border-color: var(--lilac-neon);
       transform: translateY(-2px);
     }
 
-    .btn.solid {
-      background: var(--lilac);
-      color: var(--ink);
+    .btn-whatsapp {
+      background: #128c7e;
+      color: #fff;
+      box-shadow: 0 4px 18px rgba(18, 140, 126, 0.4);
     }
 
-    .btn.whatsapp-btn {
+    .btn-whatsapp:hover {
       background: #25d366;
-      color: #fff;
-      border-color: #25d366;
-      box-shadow: 0 4px 15px rgba(37, 211, 102, 0.35);
+      box-shadow: 0 6px 25px rgba(37, 211, 102, 0.5);
+      transform: translateY(-2px);
     }
 
-    .btn.whatsapp-btn:hover {
-      background: #20ba59;
-      box-shadow: 0 6px 22px rgba(37, 211, 102, 0.55);
-    }
-
-    .btn.ghost {
-      color: var(--lilac);
-      background: transparent;
-    }
-
-    .btn.ghost:hover {
-      background: var(--royal);
-      color: #fff;
-    }
-
-    .btn.sm {
-      padding: 8px 18px;
-      font-size: 0.85rem;
-    }
-
-    /* Main Content Layout */
+    /* Layout Containers */
     main {
-      max-width: 1080px;
+      max-width: 1140px;
       margin: 0 auto;
-      padding: 20px 20px 100px;
+      padding: 40px 20px 100px;
       display: flex;
       flex-direction: column;
-      gap: 85px;
+      gap: 100px;
     }
 
-    .section-tag {
-      font-family: var(--f-mono);
-      color: var(--lilac);
-      font-size: 0.85rem;
+    .section-eyebrow {
+      font-family: var(--font-mono);
+      font-size: 0.82rem;
       text-transform: uppercase;
-      letter-spacing: 1.5px;
-      margin-bottom: 6px;
-      display: block;
+      letter-spacing: 2px;
+      color: var(--lilac-neon);
+      margin-bottom: 8px;
+      display: inline-block;
     }
 
-    .section-title {
-      font-family: var(--f-display);
-      font-size: clamp(2rem, 4vw, 2.8rem);
-      font-weight: 800;
-      color: var(--lilac);
-      margin-bottom: 10px;
-      line-height: 1.15;
+    .section-headline {
+      font-family: var(--font-display);
+      font-size: clamp(2rem, 4vw, 2.75rem);
+      font-weight: 700;
+      color: var(--text-white);
+      line-height: 1.2;
+      letter-spacing: -0.5px;
     }
 
-    .section-subtitle {
-      color: var(--muted);
-      font-size: 1rem;
-      max-width: 600px;
-      margin-bottom: 30px;
-    }
-
-    /* Hero Section */
-    .hero {
+    /* Hero Section with Cutout Cut Silhouette & Aurora Halo */
+    .hero-split-grid {
       display: grid;
-      grid-template-columns: 1.25fr 0.85fr;
+      grid-template-columns: 1.2fr 0.8fr;
       gap: 40px;
       align-items: center;
-      min-height: calc(100vh - 100px);
-      padding: 40px 0;
+      min-height: calc(100vh - 120px);
+      padding: 20px 0;
     }
 
-    .pill {
+    .hero-info {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+
+    .status-badge {
       display: inline-flex;
       align-items: center;
       gap: 10px;
       padding: 6px 14px;
-      border: 1px solid var(--line);
+      background: rgba(16, 185, 129, 0.08);
+      border: 1px solid rgba(16, 185, 129, 0.3);
       border-radius: 999px;
-      font-size: 0.82rem;
-      color: var(--muted);
-      margin-bottom: 18px;
-    }
-
-    .pill span {
-      width: 8px;
-      height: 8px;
-      border-radius: 50%;
-      background: var(--lilac);
-      animation: blink 1.6s infinite;
-    }
-
-    .hero h1 {
-      font-family: var(--f-display);
-      font-size: clamp(2.6rem, 5vw, 4.2rem);
-      font-weight: 800;
-      color: var(--lilac);
-      line-height: 1.1;
-      margin-bottom: 12px;
-      letter-spacing: -0.02em;
-    }
-
-    .hero-role {
-      font-size: 1.15rem;
-      color: #fff;
+      font-size: 0.8rem;
+      color: var(--emerald);
+      width: fit-content;
       font-weight: 600;
-      margin-bottom: 12px;
     }
 
-    .hero-desc {
-      color: var(--muted);
-      font-size: 1rem;
+    .status-badge-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--emerald);
+      box-shadow: 0 0 10px var(--emerald);
+      animation: pulseGreen 2s infinite;
+    }
+
+    @keyframes pulseGreen {
+      0% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.4; transform: scale(0.85); }
+      100% { opacity: 1; transform: scale(1); }
+    }
+
+    .hero-title {
+      font-family: var(--font-display);
+      font-size: clamp(2.8rem, 5.5vw, 4.2rem);
+      font-weight: 800;
+      line-height: 1.1;
+      letter-spacing: -1px;
+    }
+
+    .text-gradient {
+      background: linear-gradient(135deg, #ffffff 30%, var(--lilac-neon) 75%, var(--purple-accent) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .hero-summary {
+      color: var(--text-muted);
+      font-size: 1.1rem;
       line-height: 1.7;
-      margin-bottom: 24px;
+      max-width: 580px;
     }
 
-    .stats-row {
+    /* Key Business Metrics */
+    .stats-deck {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 12px;
-      margin-bottom: 24px;
+      gap: 14px;
+      margin-top: 8px;
     }
 
-    .stat-card {
-      background: rgba(36, 0, 70, 0.45);
-      border: 1px solid var(--line);
-      padding: 16px;
-      border-radius: 14px;
+    .stat-pill {
+      background: rgba(255, 255, 255, 0.02);
+      border: var(--border-subtle);
+      border-radius: 16px;
+      padding: 18px 16px;
       text-align: center;
     }
 
-    .stat-num {
-      font-family: var(--f-display);
-      font-size: 1.65rem;
+    .stat-digit {
+      font-family: var(--font-display);
+      font-size: 1.75rem;
       font-weight: 800;
-      color: var(--lilac);
+      color: var(--lilac-neon);
     }
 
-    .stat-label {
+    .stat-caption {
       font-size: 0.78rem;
-      color: var(--muted);
+      color: var(--text-muted);
       margin-top: 4px;
     }
 
-    /* Hero Frame with Ripples */
-    .hero-photo-wrapper {
+    /* Cutout Portrait with Neon Aura Glow */
+    .portrait-stage {
       position: relative;
       display: flex;
       flex-direction: column;
       align-items: center;
-      justify-self: center;
-      width: min(100%, 340px);
+      justify-content: center;
     }
 
-    .frame {
+    .glow-aura-disc {
+      position: absolute;
+      width: 380px;
+      height: 380px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(222, 192, 241, 0.32) 0%, rgba(123, 44, 191, 0.4) 45%, transparent 70%);
+      filter: blur(55px);
+      z-index: 1;
+      animation: pulseAura 4s infinite alternate ease-in-out;
+    }
+
+    @keyframes pulseAura {
+      0% { transform: scale(0.92); opacity: 0.65; }
+      100% { transform: scale(1.08); opacity: 0.95; }
+    }
+
+    .portrait-image-container {
       position: relative;
       z-index: 2;
       width: 100%;
-      aspect-ratio: 4/5;
-      border-radius: 180px 180px 24px 24px;
-      overflow: hidden;
-      background: var(--lilac);
-      border: 3px solid var(--lilac);
-      box-shadow: 0 30px 70px rgba(0, 0, 0, 0.55);
+      max-width: 360px;
+      display: flex;
+      justify-content: center;
+      filter: drop-shadow(0 15px 35px rgba(0, 0, 0, 0.9))
+              drop-shadow(0 0 35px rgba(222, 192, 241, 0.28));
     }
 
-    .frame img {
+    .portrait-cutout {
       width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: top;
+      height: auto;
+      object-fit: contain;
       display: block;
+      transform-origin: bottom center;
+      transition: transform 0.4s ease;
     }
 
-    .ripple {
+    .portrait-stage:hover .portrait-cutout {
+      transform: scale(1.03);
+    }
+
+    .portrait-stage-badge {
       position: absolute;
-      left: 0;
-      right: 0;
-      top: 0;
-      aspect-ratio: 4/5;
-      border-radius: 180px 180px 24px 24px;
-      border: 2px solid var(--lilac);
-      opacity: 0;
-      animation: ripple 3.6s ease-out infinite;
-    }
-
-    .r2 { animation-delay: 1.2s; }
-    .r3 { animation-delay: 2.4s; }
-
-    .loc {
-      margin-top: 14px;
+      bottom: -16px;
+      z-index: 3;
+      background: rgba(19, 6, 33, 0.85);
+      border: var(--border-bright);
+      backdrop-filter: blur(12px);
+      padding: 8px 20px;
+      border-radius: 999px;
       display: flex;
       align-items: center;
-      gap: 6px;
-      font-size: 0.85rem;
-      color: var(--muted);
+      gap: 10px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
     }
 
-    @keyframes ripple {
-      0% { transform: scale(1); opacity: 0.65; }
-      100% { transform: scale(1.35); opacity: 0; }
-    }
-
-    @keyframes blink { 50% { opacity: 0.25; } }
-
-    /* Services Grid */
-    .services-grid {
+    /* Executive Capabilities Pillars */
+    .pillars-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
-      gap: 20px;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 22px;
     }
 
-    .service-card {
-      padding: 30px;
+    .pillar-card {
+      padding: 32px;
       display: flex;
       flex-direction: column;
-      gap: 12px;
+      gap: 14px;
     }
 
-    .service-icon {
-      width: 48px;
-      height: 48px;
-      border-radius: 12px;
-      background: var(--lilac);
-      color: var(--ink);
+    .pillar-icon-box {
+      width: 52px;
+      height: 52px;
+      border-radius: 14px;
+      background: rgba(222, 192, 241, 0.08);
+      border: 1px solid rgba(222, 192, 241, 0.2);
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 1.25rem;
-      margin-bottom: 6px;
+      color: var(--lilac-neon);
+      font-size: 1.4rem;
+      margin-bottom: 4px;
     }
 
-    .service-card h3 {
-      font-family: var(--f-display);
-      font-size: 1.25rem;
+    .pillar-card h3 {
+      font-family: var(--font-display);
+      font-size: 1.3rem;
       color: #fff;
     }
 
-    .service-card p {
-      font-size: 0.92rem;
-      color: var(--muted);
-      line-height: 1.6;
+    .pillar-card p {
+      font-size: 0.94rem;
+      color: var(--text-muted);
+      line-height: 1.65;
     }
 
-    /* Works Filter & Grid */
-    .filter-bar {
+    /* Case Studies & System Implementations */
+    .projects-filter-nav {
       display: flex;
       gap: 10px;
-      margin-bottom: 24px;
+      margin-bottom: 26px;
       flex-wrap: wrap;
     }
 
-    .filter-btn {
-      background: rgba(60, 9, 108, 0.4);
-      border: 1px solid var(--line);
-      color: var(--muted);
-      padding: 8px 18px;
+    .project-filter-btn {
+      background: rgba(255, 255, 255, 0.03);
+      border: var(--border-subtle);
+      color: var(--text-muted);
+      padding: 8px 20px;
       border-radius: 999px;
       font-size: 0.85rem;
       font-weight: 600;
       cursor: pointer;
-      transition: var(--transition);
+      transition: var(--transition-smooth);
     }
 
-    .filter-btn.active, .filter-btn:hover {
-      background: var(--lilac);
-      color: var(--ink);
-      border-color: var(--lilac);
+    .project-filter-btn.active, .project-filter-btn:hover {
+      background: var(--lilac-neon);
+      color: var(--bg-pitch);
+      border-color: var(--lilac-neon);
+      box-shadow: 0 0 15px var(--lilac-glow);
     }
 
     .projects-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
-      gap: 22px;
+      grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
+      gap: 24px;
     }
 
     .project-card {
-      padding: 24px;
       display: flex;
       flex-direction: column;
-      justify-content: space-between;
-      gap: 16px;
+      overflow: hidden;
     }
 
-    .project-card h3 {
-      font-family: var(--f-display);
+    .project-card-image-wrap {
+      width: 100%;
+      height: 200px;
+      position: relative;
+      overflow: hidden;
+      border-bottom: var(--border-subtle);
+    }
+
+    .project-card-image-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .project-card:hover .project-card-image-wrap img {
+      transform: scale(1.06);
+    }
+
+    .project-card-content {
+      padding: 26px;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+      justify-content: space-between;
+      gap: 18px;
+    }
+
+    .project-card-content h3 {
+      font-family: var(--font-display);
       font-size: 1.25rem;
       color: #fff;
-      margin-bottom: 6px;
+      margin-bottom: 8px;
     }
 
-    .project-card p {
+    .project-card-content p {
       font-size: 0.92rem;
-      color: var(--muted);
+      color: var(--text-muted);
+      line-height: 1.6;
     }
 
     .project-tags {
@@ -515,522 +556,569 @@
     }
 
     .project-tags span {
-      font-size: 0.75rem;
+      font-size: 0.76rem;
       padding: 4px 12px;
-      border: 1px solid var(--line);
-      border-radius: 999px;
-      color: var(--lilac);
-      background: rgba(36, 0, 70, 0.4);
+      border-radius: 6px;
+      background: rgba(222, 192, 241, 0.06);
+      border: 1px solid rgba(222, 192, 241, 0.12);
+      color: var(--lilac-neon);
     }
 
-    /* Experience & Education */
-    .career-grid {
+    /* Dual Experience & Education Grid */
+    .timeline-education-grid {
       display: grid;
       grid-template-columns: 1.2fr 0.8fr;
+      gap: 32px;
+    }
+
+    .interactive-timeline {
+      position: relative;
+      padding-left: 32px;
+      display: flex;
+      flex-direction: column;
       gap: 28px;
     }
 
-    .timeline {
-      position: relative;
-      padding-left: 28px;
-      display: flex;
-      flex-direction: column;
-      gap: 24px;
-    }
-
-    /* Dynamic JS Scroll-Line */
-    .timeline-progress-line {
+    .timeline-track-rail {
       position: absolute;
       left: 0;
-      top: 8px;
-      bottom: 8px;
+      top: 10px;
+      bottom: 10px;
       width: 2px;
-      background: var(--line);
+      background: rgba(222, 192, 241, 0.12);
     }
 
-    .timeline-progress-fill {
+    .timeline-track-fill {
       position: absolute;
       top: 0;
       left: 0;
       width: 100%;
       height: 0%;
-      background: linear-gradient(180deg, var(--lilac), var(--royal));
-      box-shadow: 0 0 8px var(--lilac);
+      background: linear-gradient(180deg, var(--lilac-neon), var(--purple-accent));
+      box-shadow: 0 0 10px var(--lilac-neon);
       transition: height 0.15s ease-out;
     }
 
-    .timeline-item { position: relative; }
+    .timeline-milestone {
+      position: relative;
+    }
 
-    .timeline-dot {
+    .timeline-milestone-marker {
       position: absolute;
-      left: -36px;
+      left: -40px;
       top: 6px;
-      width: 16px;
-      height: 16px;
+      width: 18px;
+      height: 18px;
       border-radius: 50%;
-      background: var(--lilac);
-      border: 3px solid var(--ink);
-      box-shadow: 0 0 0 2px var(--lilac);
+      background: var(--bg-pitch);
+      border: 3px solid var(--lilac-neon);
+      box-shadow: 0 0 10px var(--lilac-neon);
       transition: transform 0.3s ease;
     }
 
-    .timeline-item:hover .timeline-dot {
+    .timeline-milestone:hover .timeline-milestone-marker {
       transform: scale(1.3);
+      background: var(--purple-accent);
     }
 
-    .timeline-content {
-      padding: 22px;
+    .milestone-content {
+      padding: 24px;
     }
 
-    .timeline-header {
+    .milestone-header {
       display: flex;
       justify-content: space-between;
       align-items: baseline;
       flex-wrap: wrap;
-      gap: 6px;
+      gap: 8px;
     }
 
-    .timeline-role {
-      font-family: var(--f-display);
+    .milestone-role {
+      font-family: var(--font-display);
       font-size: 1.15rem;
+      font-weight: 700;
       color: #fff;
     }
 
-    .timeline-date {
-      font-family: var(--f-mono);
+    .milestone-period {
+      font-family: var(--font-mono);
       font-size: 0.78rem;
-      color: var(--muted);
+      color: var(--lilac-neon);
+      background: rgba(222, 192, 241, 0.08);
+      padding: 3px 10px;
+      border-radius: 999px;
     }
 
-    .timeline-org {
-      color: var(--lilac);
+    .milestone-company {
+      color: var(--lilac-neon);
       font-weight: 600;
-      font-size: 0.88rem;
-      margin: 4px 0 8px;
+      font-size: 0.9rem;
+      margin: 4px 0 10px;
     }
 
-    .timeline-content ul {
+    .milestone-content ul {
       display: flex;
       flex-direction: column;
       gap: 6px;
       font-size: 0.9rem;
-      color: var(--muted);
+      color: var(--text-muted);
+      list-style: none;
     }
 
-    .timeline-content ul li {
+    .milestone-content ul li {
       position: relative;
-      padding-left: 16px;
+      padding-left: 18px;
     }
 
-    .timeline-content ul li::before {
-      content: "";
+    .milestone-content ul li::before {
+      content: "▹";
       position: absolute;
       left: 0;
-      top: 0.65em;
-      width: 6px;
-      height: 2px;
-      background: var(--lilac);
+      color: var(--lilac-neon);
     }
 
-    /* Skills Chips */
-    .chips {
+    /* Skills Interactive Badges */
+    .skills-cluster {
       display: flex;
       flex-wrap: wrap;
       gap: 12px;
     }
 
-    .chip-item {
+    .skill-chip {
       display: inline-flex;
       align-items: center;
-      gap: 8px;
-      padding: 10px 20px;
-      border: 1px solid var(--line);
-      background: var(--panel);
+      gap: 10px;
+      padding: 12px 22px;
       border-radius: 999px;
+      background: var(--bg-card);
+      border: var(--border-subtle);
       font-weight: 600;
-      font-size: 0.9rem;
-      color: var(--text);
-      animation: float 4s ease-in-out infinite;
-      transition: var(--transition);
+      font-size: 0.92rem;
+      color: var(--text-white);
+      transition: var(--transition-smooth);
+      cursor: default;
     }
 
-    .chip-item:hover {
-      border-color: var(--lilac);
-      color: var(--lilac);
-      transform: translateY(-4px);
+    .skill-chip i {
+      color: var(--lilac-neon);
+      font-size: 1.1rem;
     }
 
-    @keyframes float {
-      50% { transform: translateY(-6px); }
+    .skill-chip:hover {
+      background: rgba(222, 192, 241, 0.14);
+      border-color: var(--lilac-neon);
+      box-shadow: 0 0 20px var(--lilac-glow);
+      transform: translateY(-3px) scale(1.02);
     }
 
-    /* Contact Section */
-    .cta-card {
+    /* Contact Action Terminal */
+    .contact-dock {
       text-align: center;
-      padding: 50px 24px;
+      padding: 56px 28px;
     }
 
-    .cta-card h2 {
-      font-family: var(--f-display);
-      font-size: clamp(2rem, 4vw, 2.8rem);
-      margin-bottom: 10px;
-      color: var(--lilac);
+    .contact-dock h2 {
+      font-family: var(--font-display);
+      font-size: clamp(2.2rem, 4.5vw, 3rem);
+      margin-bottom: 12px;
+      color: var(--text-white);
     }
 
-    .cta-card p {
-      max-width: 520px;
-      margin: 0 auto 28px;
-      color: var(--muted);
+    .contact-dock p {
+      color: var(--text-muted);
+      max-width: 580px;
+      margin: 0 auto 32px;
+      font-size: 1.05rem;
     }
 
-    /* Floating WhatsApp Button */
-    .whatsapp-float {
+    /* Floating WhatsApp Trigger */
+    .floating-whatsapp {
       position: fixed;
-      bottom: 26px;
-      left: 26px;
+      bottom: 28px;
+      left: 28px;
       z-index: 1000;
       background: #25d366;
       color: #fff;
-      width: 56px;
-      height: 56px;
+      width: 58px;
+      height: 58px;
       border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 1.8rem;
+      font-size: 1.85rem;
       text-decoration: none;
-      box-shadow: 0 6px 24px rgba(37, 211, 102, 0.45);
-      transition: transform 0.25s ease;
-      animation: pulse-ring 2.5s infinite;
+      box-shadow: 0 8px 30px rgba(37, 211, 102, 0.45);
+      transition: transform 0.3s ease;
+      animation: pulseWhatsApp 2.6s infinite;
     }
 
-    .whatsapp-float:hover {
-      transform: scale(1.1);
+    .floating-whatsapp:hover {
+      transform: scale(1.12);
     }
 
-    @keyframes pulse-ring {
+    @keyframes pulseWhatsApp {
       0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.6); }
       70% { box-shadow: 0 0 0 16px rgba(37, 211, 102, 0); }
       100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
     }
 
-    /* Dynamic JS Scroll Reveals */
-    .reveal {
+    /* Scroll Reveals */
+    .scroll-reveal {
       opacity: 0;
-      transition: opacity 0.8s cubic-bezier(0.2, 0.8, 0.2, 1), transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+      transform: translateY(35px);
+      transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
     }
 
-    [data-anim="rise"] { transform: translateY(45px); }
-    [data-anim="left"] { transform: translateX(-50px); }
-    [data-anim="right"] { transform: translateX(50px); }
-    [data-anim="scale"] { transform: scale(0.85); }
-
-    .reveal.in {
+    .scroll-reveal.visible {
       opacity: 1;
-      transform: translate(0) scale(1);
+      transform: translateY(0);
     }
 
-    /* Toast Notification */
-    #toast {
+    /* Toast */
+    #contact-toast {
       position: fixed;
-      bottom: 28px;
-      right: 28px;
-      background: rgba(36, 0, 70, 0.95);
-      border: 1px solid var(--lilac);
+      bottom: 30px;
+      right: 30px;
+      background: rgba(23, 7, 38, 0.95);
+      border: 1px solid var(--lilac-neon);
       color: #fff;
-      padding: 12px 22px;
+      padding: 12px 24px;
       border-radius: 12px;
-      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
       opacity: 0;
       transform: translateY(20px);
       transition: all 0.3s ease;
       z-index: 1000;
       pointer-events: none;
-      font-size: 0.88rem;
+      font-size: 0.9rem;
     }
 
-    #toast.show {
+    #contact-toast.active {
       opacity: 1;
       transform: translateY(0);
     }
 
     footer {
       text-align: center;
-      padding: 24px;
+      padding: 30px;
       font-size: 0.85rem;
-      color: var(--muted);
-      border-top: 1px solid var(--line);
+      color: var(--text-muted);
+      border-top: var(--border-subtle);
     }
 
-    @media (max-width: 860px) {
+    @media (max-width: 900px) {
+      .hero-split-grid, .timeline-education-grid { grid-template-columns: 1fr; }
       .nav-links { display: none; }
-      .hero { grid-template-columns: 1fr; padding-top: 20px; }
-      .hero-photo-wrapper { order: -1; width: min(75%, 280px); }
-      .career-grid { grid-template-columns: 1fr; }
+      .portrait-stage { order: -1; }
+      .hero-title { font-size: 2.6rem; }
     }
   </style>
 </head>
 <body>
 
-  <!-- Scroll Progress Indicator -->
+  <!-- Live Top Scroll Progress Line -->
   <div id="scroll-progress"></div>
 
-  <!-- Interactive JavaScript Particle Network -->
-  <canvas id="bg-canvas"></canvas>
-
-  <!-- Ambient Glowing Background Orbs -->
-  <div class="aurora-bg">
-    <div class="aurora-orb orb-1"></div>
-    <div class="aurora-orb orb-2"></div>
-    <div class="aurora-orb orb-3"></div>
+  <!-- Deep Canvas Ambient Background -->
+  <div class="ambient-canvas">
+    <div class="ambient-glow-orb orb-purple-1"></div>
+    <div class="ambient-glow-orb orb-purple-2"></div>
   </div>
 
-  <!-- Navigation -->
+  <!-- Sticky Navbar -->
   <nav>
     <div class="nav-container">
-      <a href="#home" class="logo">AFI</a>
+      <a href="#home" class="nav-logo">
+        <span class="nav-logo-badge">AF</span>
+        <span>Al-fahidin</span>
+      </a>
+
       <ul class="nav-links">
-        <li><a href="#services">Services</a></li>
-        <li><a href="#works">Works</a></li>
-        <li><a href="#experience">Experience</a></li>
-        <li><a href="#education">Education</a></li>
-        <li><a href="#skills">Skills</a></li>
+        <li><a href="#services">Pillars</a></li>
+        <li><a href="#works">Solutions</a></li>
+        <li><a href="#experience">Track Record</a></li>
+        <li><a href="#skills">Competencies</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
-      <a href="https://wa.me/8801741922221?text=Hello%20Md.%20Al-fahidin,%20I%20am%20interested%20in%20your%20services" target="_blank" class="btn whatsapp-btn sm">
-        <i class="fa-brands fa-whatsapp"></i> Chat Now
+
+      <a href="https://wa.me/8801741922221?text=Hi%20Md%20Al-fahidin,%20I%20am%20interested%20in%20consulting%20with%20you" target="_blank" class="btn btn-whatsapp" style="padding: 8px 20px; font-size: 0.85rem;">
+        <i class="fa-brands fa-whatsapp"></i> Direct Chat
       </a>
     </div>
   </nav>
 
   <main>
-    <!-- Hero Section -->
-    <header id="home" class="hero">
-      <div class="hero-text reveal" data-anim="left">
-        <div class="pill"><span></span> Open to new projects & partnerships</div>
-        <h1>Md. Al-fahidin Islam</h1>
-        <p class="hero-role">Senior Sales Executive: Software, Web &amp; Mobile Apps, SaaS[cite: 7]</p>
-        <p class="hero-desc">
-          I sell and coordinate software projects for international clients, from the first discovery call to handover with technical teams[cite: 7].
+    <!-- 1. Redesigned Hero Section with Glowing Cutout Headshot -->
+    <section id="home" class="hero-split-grid">
+      <div class="hero-info scroll-reveal">
+        <div class="status-badge">
+          <span class="status-badge-dot"></span> Available for Strategic Tech Partnerships
+        </div>
+
+        <h1 class="hero-title">
+          Md Al-fahidin <br />
+          <span class="text-gradient">Islam</span>
+        </h1>
+
+        <p class="hero-summary">
+          Senior Sales Executive & Strategic Technology Consultant bridging international enterprise buyers with high-performance SaaS platforms, custom software architectures, and automated n8n workflows[cite: 1].
         </p>
 
-        <!-- Stats with JS Count-Up Animations -->
-        <div class="stats-row">
-          <div class="stat-card">
-            <div class="stat-num" data-target="100" data-prefix="$" data-suffix="K+">$0K+[cite: 7]</div>
-            <div class="stat-label">Closed in 1 Year[cite: 7]</div>
+        <!-- Stats with Vanilla JS Counter Trigger -->
+        <div class="stats-deck">
+          <div class="stat-pill">
+            <div class="stat-digit" data-count="100" data-prefix="$" data-suffix="K+">$0K+</div>
+            <div class="stat-caption">Closed in 1 Year[cite: 1]</div>
           </div>
-          <div class="stat-card">
-            <div class="stat-num" data-target="3" data-suffix=" Roles">0 Roles[cite: 7]</div>
-            <div class="stat-label">Sales, CRM &amp; Delivery[cite: 7]</div>
+          <div class="stat-pill">
+            <div class="stat-digit">Global</div>
+            <div class="stat-caption">Client Acquisition[cite: 1, 2]</div>
           </div>
-          <div class="stat-card">
-            <div class="stat-num">Global[cite: 7]</div>
-            <div class="stat-label">Client Acquisition[cite: 7]</div>
+          <div class="stat-pill">
+            <div class="stat-digit">Full-Cycle</div>
+            <div class="stat-caption">Discovery to Delivery[cite: 1]</div>
           </div>
         </div>
 
-        <div style="display: flex; gap: 12px; flex-wrap: wrap;">
-          <a href="https://wa.me/8801741922221?text=Hello%20Md.%20Al-fahidin,%20I%20found%20your%20portfolio" target="_blank" class="btn whatsapp-btn">
-            <i class="fa-brands fa-whatsapp"></i> Chat on WhatsApp
+        <div style="display: flex; gap: 14px; flex-wrap: wrap; margin-top: 6px;">
+          <a href="https://wa.me/8801741922221?text=Hello%20Al-fahidin,%20let's%20discuss%20a%20project" target="_blank" class="btn btn-glow">
+            <i class="fa-brands fa-whatsapp"></i> WhatsApp Me[cite: 1]
           </a>
-          <button class="btn ghost" onclick="copyContact('alfahidinislamshihab@gmail.com', 'Email copied!')">
+          <button class="btn btn-outline" onclick="triggerCopy('alfahidinislamshihab@gmail.com', 'Email copied to clipboard!')">
             <i class="fa-solid fa-copy"></i> Copy Email[cite: 1]
           </button>
         </div>
       </div>
 
-      <!-- Hero Frame -->
-      <div class="hero-photo-wrapper reveal" data-anim="right">
-        <i class="ripple r1"></i><i class="ripple r2"></i><i class="ripple r3"></i>
-        <div class="frame">
-          <img src="profile.jpg" onerror="this.src='https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=400&q=80'" alt="Md. Al-fahidin Islam" />
+      <!-- Cutout Portrait with Layered Background Glow -->
+      <div class="portrait-stage scroll-reveal">
+        <div class="glow-aura-disc"></div>
+        <div class="portrait-image-container">
+          <!-- Your uploaded photo file -->
+          <img src="WhatsApp_Image_2026-11-02_at_11.40.53_PM-removebg-preview.png" onerror="this.src='profile.jpg'" alt="Md Al-fahidin Islam" class="portrait-cutout" />
         </div>
-        <p class="loc"><i class="fa-solid fa-location-dot"></i> Badda / Mohakhali, Dhaka, Bangladesh[cite: 1, 7]</p>
-      </div>
-    </header>
-
-    <!-- Services Section -->
-    <section id="services" class="reveal" data-anim="rise">
-      <span class="section-tag">Core Capabilities /&gt;</span>
-      <h2 class="section-title">What I Bring to the Table[cite: 7]</h2>
-      <p class="section-subtitle">Sales, automation, and client delivery for software teams and international clients[cite: 7].</p>
-
-      <div class="services-grid">
-        <div class="glass-card service-card tilt">
-          <div class="service-icon"><i class="fa-solid fa-chart-line"></i></div>
-          <h3>Software &amp; SaaS Sales</h3>
-          <p>Discovery calls, paid consultations, custom proposals, and negotiation for web apps, mobile apps, and SaaS solutions[cite: 7].</p>
-        </div>
-        <div class="glass-card service-card tilt">
-          <div class="service-icon"><i class="fa-solid fa-network-wired"></i></div>
-          <h3>Workflow Automation</h3>
-          <p>n8n workflows connecting webhooks, CRMs, payments, and team channels so leads transfer without manual copying[cite: 7].</p>
-        </div>
-        <div class="glass-card service-card tilt">
-          <div class="service-icon"><i class="fa-solid fa-handshake"></i></div>
-          <h3>Client &amp; Account Management</h3>
-          <p>Quotations, invoices, follow-ups, and long-term relationships with corporate clients[cite: 7].</p>
+        <div class="portrait-stage-badge">
+          <i class="fa-solid fa-location-dot" style="color: var(--lilac-neon);"></i>
+          <span style="font-size: 0.85rem; font-weight: 600;">Dhaka, Bangladesh[cite: 1]</span>
         </div>
       </div>
     </section>
 
-    <!-- Works Section -->
-    <section id="works" class="reveal" data-anim="rise">
-      <div style="display: flex; justify-content: space-between; align-items: flex-end; flex-wrap: wrap; gap: 12px; margin-bottom: 24px;">
-        <div>
-          <span class="section-tag">Showcase /&gt;</span>
-          <h2 class="section-title" style="margin-bottom: 0;">Selected Systems &amp; Work[cite: 7]</h2>
+    <!-- 2. Strategic Pillars -->
+    <section id="services" class="scroll-reveal">
+      <span class="section-eyebrow">Strategic Capabilities /&gt;</span>
+      <h2 class="section-headline">What I Bring to Modern Tech Teams</h2>
+      <p style="color: var(--text-muted); margin-top: 8px; margin-bottom: 30px;">
+        High-impact sales execution coupled with end-to-end technical requirement scoping[cite: 1].
+      </p>
+
+      <div class="pillars-grid">
+        <div class="glass-panel pillar-card tilt-element">
+          <div class="pillar-icon-box"><i class="fa-solid fa-chart-line"></i></div>
+          <h3>Enterprise SaaS & Software Sales</h3>
+          <p>Navigating complex discovery, structuring multi-tier technical proposals, conducting live product demonstrations, and closing international contracts[cite: 1].</p>
         </div>
-        <div class="filter-bar" style="margin-bottom: 0;">
-          <button class="filter-btn active" onclick="filterProjects('all')">All</button>
-          <button class="filter-btn" onclick="filterProjects('saas')">SaaS &amp; Sales</button>
-          <button class="filter-btn" onclick="filterProjects('tech')">Tech &amp; Automation</button>
+
+        <div class="glass-panel pillar-card tilt-element">
+          <div class="pillar-icon-box"><i class="fa-solid fa-network-wired"></i></div>
+          <h3>n8n Systems & Automation</h3>
+          <p>Architecting multi-endpoint webhooks and automated synchronization layers between client-facing portals, CRMs, and operations with zero manual friction[cite: 1].</p>
+        </div>
+
+        <div class="glass-panel pillar-card tilt-element">
+          <div class="pillar-icon-box"><i class="fa-solid fa-handshake"></i></div>
+          <h3>Client & Account Management</h3>
+          <p>Orchestrating smooth technical handoffs, managing long-term stakeholder expectations, and turning initial projects into recurring revenue pipelines[cite: 1].</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. Solutions & Technical Showcase -->
+    <section id="works" class="scroll-reveal">
+      <div style="display: flex; justify-content: space-between; align-items: flex-end; flex-wrap: wrap; gap: 14px; margin-bottom: 28px;">
+        <div>
+          <span class="section-eyebrow">Portfolio Case Studies /&gt;</span>
+          <h2 class="section-headline">Proven Implementations</h2>
+        </div>
+        <div class="projects-filter-nav">
+          <button class="project-filter-btn active" onclick="applyProjectFilter('all')">All Work</button>
+          <button class="project-filter-btn" onclick="applyProjectFilter('saas')">SaaS & Sales</button>
+          <button class="project-filter-btn" onclick="applyProjectFilter('tech')">Systems & Automation</button>
         </div>
       </div>
 
       <div class="projects-grid">
-        <div class="glass-card project-card tilt" data-category="saas">
-          <div>
-            <div style="color: var(--lilac); font-size: 1.5rem; margin-bottom: 12px;"><i class="fa-solid fa-rocket"></i></div>
-            <h3>$100K+ International SaaS Pipeline</h3>
-            <p>Engineered an end-to-end framework acquiring international clients for web, SaaS, and bespoke mobile applications[cite: 1, 7].</p>
+        <div class="glass-panel project-card tilt-element" data-type="saas">
+          <div class="project-card-image-wrap">
+            <img src="watermarked_img_14401018893260067301.jpg" alt="SaaS Pipeline" onerror="this.src='https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80'" />
           </div>
-          <div class="project-tags">
-            <span>SaaS Sales</span><span>Proposals</span><span>Negotiation[cite: 7]</span>
-          </div>
-        </div>
-
-        <div class="glass-card project-card tilt" data-category="tech">
-          <div>
-            <div style="color: var(--lilac); font-size: 1.5rem; margin-bottom: 12px;"><i class="fa-solid fa-bolt"></i></div>
-            <h3>n8n Multi-App Synchronization</h3>
-            <p>Webhook-driven automated pipelines syncing qualified leads directly into CRM tables and team channels in real time[cite: 7].</p>
-          </div>
-          <div class="project-tags">
-            <span>n8n[cite: 7]</span><span>Webhooks[cite: 7]</span><span>CRM[cite: 7]</span>
+          <div class="project-card-content">
+            <div>
+              <h3>$100K+ International SaaS Pipeline</h3>
+              <p>Engineered an end-to-end client acquisition framework connecting overseas enterprises with bespoke web & mobile applications[cite: 1].</p>
+            </div>
+            <div class="project-tags">
+              <span>B2B Tech Sales[cite: 1]</span><span>Proposals[cite: 1]</span><span>Negotiation[cite: 1]</span>
+            </div>
           </div>
         </div>
 
-        <div class="glass-card project-card tilt" data-category="saas">
-          <div>
-            <div style="color: var(--lilac); font-size: 1.5rem; margin-bottom: 12px;"><i class="fa-solid fa-diagram-project"></i></div>
-            <h3>Bdsuppliers Growth Ecosystem</h3>
-            <p>Orchestrated growth marketing, data-driven conversion strategies, and online community funnels[cite: 2].</p>
+        <div class="glass-panel project-card tilt-element" data-type="tech">
+          <div class="project-card-image-wrap">
+            <img src="watermarked_img_5796757040008765526.jpg" alt="n8n Integration" onerror="this.src='https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=800&q=80'" />
           </div>
-          <div class="project-tags">
-            <span>Marketing[cite: 2]</span><span>Analytics[cite: 2]</span><span>Conversions[cite: 2]</span>
+          <div class="project-card-content">
+            <div>
+              <h3>n8n Autonomous Orchestration</h3>
+              <p>Built serverless webhook listeners funneling qualified enterprise leads into CRM databases and team notification channels[cite: 1].</p>
+            </div>
+            <div class="project-tags">
+              <span>n8n Workflows[cite: 1]</span><span>API Endpoints</span><span>Webhooks</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="glass-panel project-card tilt-element" data-type="saas">
+          <div class="project-card-image-wrap">
+            <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80" alt="Bdsuppliers Growth" />
+          </div>
+          <div class="project-card-content">
+            <div>
+              <h3>Bdsuppliers Strategic Growth</h3>
+              <p>Spearheaded community building, multi-channel campaigns, and data-driven audience segmentation as Head of Marketing[cite: 2].</p>
+            </div>
+            <div class="project-tags">
+              <span>Marketing Strategy[cite: 2]</span><span>Analytics[cite: 2]</span><span>Conversions[cite: 2]</span>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Experience & Education -->
-    <section id="experience" class="reveal" data-anim="rise">
-      <span class="section-tag">Career &amp; Academics /&gt;</span>
-      <h2 class="section-title">Professional Path[cite: 7]</h2>
+    <!-- 4. Track Record & Dual Grid -->
+    <section id="experience" class="scroll-reveal">
+      <span class="section-eyebrow">Professional Trajectory /&gt;</span>
+      <h2 class="section-headline">Experience & Foundations</h2>
 
-      <div class="career-grid">
-        <!-- Interactive Experience Timeline with JS Scroll Draw -->
-        <div class="timeline" id="experience-timeline">
-          <div class="timeline-progress-line">
-            <div class="timeline-progress-fill" id="timeline-fill"></div>
+      <div class="timeline-education-grid" style="margin-top: 30px;">
+        <!-- Timeline with JavaScript Scroll Rail Fill -->
+        <div class="interactive-timeline" id="experience-rail">
+          <div class="timeline-track-rail">
+            <div class="timeline-track-fill" id="track-fill-bar"></div>
           </div>
 
-          <div class="timeline-item">
-            <div class="timeline-dot"></div>
-            <div class="glass-card timeline-content tilt">
-              <div class="timeline-header">
-                <span class="timeline-role">Senior Sales Executive</span>
-                <span class="timeline-date">08/2026 – Present[cite: 1]</span>
+          <div class="timeline-milestone">
+            <div class="timeline-milestone-marker"></div>
+            <div class="glass-panel milestone-content tilt-element">
+              <div class="milestone-header">
+                <span class="milestone-role">Senior Sales Executive</span>
+                <span class="milestone-period">Aug 2026 – Present[cite: 1]</span>
               </div>
-              <div class="timeline-org">Softvence Agency · Mohakhali, Dhaka[cite: 1]</div>
+              <div class="milestone-company">Softvence Agency &bull; Mohakhali, Dhaka[cite: 1]</div>
               <ul>
-                <li>Closed $100K+ in sales within one year from international clients[cite: 1, 7].</li>
-                <li>Conducted live meetings, paid consultations, and requirement discovery[cite: 7].</li>
-                <li>Led contract negotiations and handed projects over to technical teams[cite: 7].</li>
+                <li>Managing end-to-end sales cycles, enterprise SaaS presentations, and software discovery[cite: 1].</li>
+                <li>Working alongside engineering leads to ensure seamless sales-to-delivery transitions[cite: 1].</li>
               </ul>
             </div>
           </div>
 
-          <div class="timeline-item">
-            <div class="timeline-dot"></div>
-            <div class="glass-card timeline-content tilt">
-              <div class="timeline-header">
-                <span class="timeline-role">Head of Marketing</span>
-                <span class="timeline-date">08/2023 – Present[cite: 2]</span>
+          <div class="timeline-milestone">
+            <div class="timeline-milestone-marker"></div>
+            <div class="glass-panel milestone-content tilt-element">
+              <div class="milestone-header">
+                <span class="milestone-role">Sales Executive</span>
+                <span class="milestone-period">Jan 2025 – Jul 2026[cite: 1]</span>
               </div>
-              <div class="timeline-org">Bdsuppliers · Dhaka, Bangladesh[cite: 2]</div>
+              <div class="milestone-company">Softvence Agency &bull; Dhaka, Bangladesh[cite: 1]</div>
               <ul>
-                <li>Managing social media campaigns, analytics optimization, and lead generation[cite: 2].</li>
+                <li>Closed over $100K in sales within one year via overseas client acquisition[cite: 1].</li>
               </ul>
             </div>
           </div>
 
-          <div class="timeline-item">
-            <div class="timeline-dot"></div>
-            <div class="glass-card timeline-content tilt">
-              <div class="timeline-header">
-                <span class="timeline-role">Administrative Assistant</span>
-                <span class="timeline-date">01/2020 – 11/2024[cite: 2]</span>
+          <div class="timeline-milestone">
+            <div class="timeline-milestone-marker"></div>
+            <div class="glass-panel milestone-content tilt-element">
+              <div class="milestone-header">
+                <span class="milestone-role">Head of Marketing</span>
+                <span class="milestone-period">Aug 2023 – Present[cite: 2]</span>
               </div>
-              <div class="timeline-org">DeshiSmash · Florida, USA (Remote)[cite: 2]</div>
+              <div class="milestone-company">Bdsuppliers &bull; Dhaka, Bangladesh[cite: 2]</div>
               <ul>
-                <li>Coordinated legal documents, administrative workflows, and client updates[cite: 1, 2].</li>
+                <li>Leading performance marketing funnels, audience outreach, and brand campaigns[cite: 2].</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="timeline-milestone">
+            <div class="timeline-milestone-marker"></div>
+            <div class="glass-panel milestone-content tilt-element">
+              <div class="milestone-header">
+                <span class="milestone-role">Administrative Assistant</span>
+                <span class="milestone-period">Jan 2020 – Nov 2024[cite: 2]</span>
+              </div>
+              <div class="milestone-company">DeshiSmash &bull; Florida, US (Remote)[cite: 2]</div>
+              <ul>
+                <li>Facilitated operational workflows, legal assistance, and cross-border project documentation[cite: 1, 2].</li>
               </ul>
             </div>
           </div>
         </div>
 
-        <!-- Education -->
-        <div id="education" style="display: flex; flex-direction: column; gap: 18px;">
-          <div class="glass-card tilt" style="padding: 24px;">
-            <div style="color: var(--lilac); font-size: 1.5rem; margin-bottom: 8px;"><i class="fa-solid fa-graduation-cap"></i></div>
-            <h3 style="font-family: var(--f-display); font-size: 1.2rem; color: #fff;">BSc in Computer Science</h3>
-            <div style="font-size: 0.85rem; color: var(--lilac); margin-bottom: 6px;">Uttara University, Dhaka · Graduating May 2025[cite: 2]</div>
-            <p style="font-size: 0.88rem; color: var(--muted);">Foundations in software architecture, database management, and algorithmic engineering[cite: 2].</p>
+        <!-- Academic Credentials -->
+        <div style="display: flex; flex-direction: column; gap: 20px;">
+          <div class="glass-panel tilt-element" style="padding: 26px;">
+            <div style="color: var(--lilac-neon); font-size: 1.6rem; margin-bottom: 10px;"><i class="fa-solid fa-graduation-cap"></i></div>
+            <h3 style="font-family: var(--font-display); font-size: 1.25rem; color: #fff;">B.Sc. in Computer Science</h3>
+            <div style="color: var(--lilac-neon); font-size: 0.88rem; margin: 4px 0 10px;">Uttara University &bull; Graduating May 2025[cite: 2]</div>
+            <p style="font-size: 0.9rem; color: var(--text-muted); line-height: 1.6;">
+              Deep foundations in software architectures, algorithmic logic, and technical systems[cite: 2].
+            </p>
           </div>
 
-          <div class="glass-card tilt" style="padding: 24px;">
-            <div style="color: var(--lilac); font-size: 1.5rem; margin-bottom: 8px;"><i class="fa-solid fa-microchip"></i></div>
-            <h3 style="font-family: var(--f-display); font-size: 1.2rem; color: #fff;">Diploma in Computer Science</h3>
-            <div style="font-size: 0.85rem; color: var(--lilac); margin-bottom: 6px;">Jessore Polytechnic Institute · 2018 – 2022[cite: 2]</div>
-            <p style="font-size: 0.88rem; color: var(--muted);">Core technical foundation in networking, system administration, and software environments[cite: 2].</p>
+          <div class="glass-panel tilt-element" style="padding: 26px;">
+            <div style="color: var(--lilac-neon); font-size: 1.6rem; margin-bottom: 10px;"><i class="fa-solid fa-microchip"></i></div>
+            <h3 style="font-family: var(--font-display); font-size: 1.25rem; color: #fff;">Diploma in Computer Science</h3>
+            <div style="color: var(--lilac-neon); font-size: 0.88rem; margin: 4px 0 10px;">Jessore Polytechnic Institute &bull; 2018 – 2022[cite: 2]</div>
+            <p style="font-size: 0.9rem; color: var(--text-muted); line-height: 1.6;">
+              Hardware, networking architectures, and modern software environment configurations[cite: 2].
+            </p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Skills -->
-    <section id="skills" class="reveal" data-anim="scale">
-      <span class="section-tag">Skills /&gt;</span>
-      <h2 class="section-title">What I Use Every Week[cite: 7]</h2>
-      <div class="chips">
-        <div class="chip-item" style="animation-delay: 0.0s;">Sales &amp; Business Development[cite: 7]</div>
-        <div class="chip-item" style="animation-delay: 0.2s;">SaaS &amp; Software Sales[cite: 7]</div>
-        <div class="chip-item" style="animation-delay: 0.4s;">Negotiation &amp; Deal Closing[cite: 7]</div>
-        <div class="chip-item" style="animation-delay: 0.6s;">Client &amp; Account Management[cite: 7]</div>
-        <div class="chip-item" style="animation-delay: 0.8s;">Strategic Partnerships[cite: 7]</div>
-        <div class="chip-item" style="animation-delay: 1.0s;">n8n Automation[cite: 7]</div>
-        <div class="chip-item" style="animation-delay: 1.2s;">CRM Architectures[cite: 1]</div>
-        <div class="chip-item" style="animation-delay: 1.4s;">Project Coordination[cite: 7]</div>
-        <div class="chip-item" style="animation-delay: 1.6s;">Product Presentations[cite: 7]</div>
+    <!-- 5. Core Competencies -->
+    <section id="skills" class="scroll-reveal">
+      <span class="section-eyebrow">Strategic Competencies /&gt;</span>
+      <h2 class="section-headline">Skills & Tech Stack</h2>
+      <div class="skills-cluster" style="margin-top: 24px;">
+        <div class="skill-chip"><i class="fa-solid fa-diagram-project"></i><span>n8n Automation[cite: 1]</span></div>
+        <div class="skill-chip"><i class="fa-solid fa-globe"></i><span>Client Acquisition[cite: 1, 2]</span></div>
+        <div class="skill-chip"><i class="fa-solid fa-cloud"></i><span>SaaS & Cloud Sales[cite: 1, 2]</span></div>
+        <div class="skill-chip"><i class="fa-solid fa-handshake"></i><span>Enterprise Closing[cite: 1, 2]</span></div>
+        <div class="skill-chip"><i class="fa-solid fa-database"></i><span>CRM & Pipeline Architecture[cite: 1]</span></div>
+        <div class="skill-chip"><i class="fa-solid fa-mobile-screen"></i><span>Mobile App Sales[cite: 1]</span></div>
+        <div class="skill-chip"><i class="fa-solid fa-scale-balanced"></i><span>Legal & Admin Operations[cite: 1, 2]</span></div>
+        <div class="skill-chip"><i class="fa-solid fa-chart-pie"></i><span>Funnel Analytics[cite: 2]</span></div>
+        <div class="skill-chip"><i class="fa-solid fa-users"></i><span>Strategic Partnerships[cite: 1, 2]</span></div>
       </div>
     </section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="reveal" data-anim="rise">
-      <div class="glass-card cta-card">
-        <h2>Have a Project in Mind?[cite: 7]</h2>
-        <p>Tell me what you want to build or sell. I reply on WhatsApp fastest[cite: 7].</p>
-        <div style="display: flex; gap: 12px; justify-content: center; flex-wrap: wrap;">
-          <a href="https://wa.me/8801741922221?text=Hello%20Md.%20Al-fahidin,%20I%20have%20a%20project%20proposal" target="_blank" class="btn whatsapp-btn">
-            <i class="fa-brands fa-whatsapp"></i> Chat on WhatsApp
+    <!-- 6. Direct Contact Terminal -->
+    <section id="contact" class="scroll-reveal">
+      <div class="glass-panel contact-dock">
+        <h2>Let's Scale Your Revenue & Workflows</h2>
+        <p>Whether you're looking to acquire enterprise clients, consult on CRM pipelines, or integrate modern n8n automations, let's talk[cite: 1].</p>
+
+        <div style="display: flex; gap: 14px; justify-content: center; flex-wrap: wrap;">
+          <a href="https://wa.me/8801741922221?text=Hello%20Al-fahidin,%20I'd%20like%20to%20discuss%20a%20project" target="_blank" class="btn btn-glow">
+            <i class="fa-brands fa-whatsapp"></i> WhatsApp (+8801741922221)[cite: 1]
           </a>
-          <a href="mailto:alfahidinislamshihab@gmail.com" class="btn ghost">
-            <i class="fa-solid fa-envelope"></i> Email Me[cite: 1]
-          </a>
-          <a href="https://www.linkedin.com/in/md-al-fahidin-islam-ba05b515b" target="_blank" class="btn ghost">
+          <button class="btn btn-outline" onclick="triggerCopy('alfahidinislamshihab@gmail.com', 'Email copied!')">
+            <i class="fa-solid fa-envelope"></i> Copy Email[cite: 1]
+          </button>
+          <a href="https://www.linkedin.com/in/md-al-fahidin-islam-ba05b515b" target="_blank" class="btn btn-outline">
             <i class="fa-brands fa-linkedin"></i> LinkedIn[cite: 1]
           </a>
         </div>
@@ -1038,22 +1126,20 @@
     </section>
   </main>
 
-  <!-- Persistent Floating WhatsApp Trigger -->
-  <a href="https://wa.me/8801741922221?text=Hi%20Md.%20Al-fahidin,%20I%20am%20contacting%20you%20from%20your%20website" target="_blank" class="whatsapp-float" title="Direct WhatsApp Chat">
+  <!-- Floating Pulsing WhatsApp Widget -->
+  <a href="https://wa.me/8801741922221?text=Hi%20Al-fahidin,%20I%20visited%20your%20website" target="_blank" class="floating-whatsapp" title="WhatsApp Chat">
     <i class="fa-brands fa-whatsapp"></i>
   </a>
 
-  <div id="toast">Copied to clipboard!</div>
+  <div id="contact-toast">Copied to clipboard!</div>
 
   <footer>
-    <p>&copy; 2026 Md. Al-fahidin Islam. All rights reserved.</p>
+    <p>&copy; 2026 Md Al-fahidin Islam. All rights reserved. Built with dark glassmorphic engineering.</p>
   </footer>
 
-  <!-- Complete Vanilla JavaScript Engine -->
+  <!-- Vanilla JavaScript Physics & Animation Engine -->
   <script>
-    /* ============================================================
-       1. Top Scroll Progress Bar & Timeline Scroll Line Fill
-    ============================================================ */
+    /* 1. Scroll Progress Bar & Experience Rail Drawing */
     window.addEventListener('scroll', () => {
       const winScroll = document.documentElement.scrollTop || document.body.scrollTop;
       const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
@@ -1062,65 +1148,52 @@
       const progressBar = document.getElementById('scroll-progress');
       if (progressBar) progressBar.style.width = scrolled + '%';
 
-      // Fill Timeline Line Dynamically
-      const timeline = document.getElementById('experience-timeline');
-      const timelineFill = document.getElementById('timeline-fill');
-      if (timeline && timelineFill) {
-        const rect = timeline.getBoundingClientRect();
-        const windowHeight = window.innerHeight;
-        
-        if (rect.top < windowHeight && rect.bottom > 0) {
-          const progress = Math.min(Math.max((windowHeight - rect.top) / rect.height, 0), 1);
-          timelineFill.style.height = (progress * 100) + '%';
+      const rail = document.getElementById('experience-rail');
+      const railFill = document.getElementById('track-fill-bar');
+      if (rail && railFill) {
+        const rect = rail.getBoundingClientRect();
+        const winHeight = window.innerHeight;
+        if (rect.top < winHeight && rect.bottom > 0) {
+          const progress = Math.min(Math.max((winHeight - rect.top) / rect.height, 0), 1);
+          railFill.style.height = (progress * 100) + '%';
         }
       }
     });
 
-    /* ============================================================
-       2. Scroll Reveal Observer with Animation Types
-    ============================================================ */
+    /* 2. Scroll-Triggered Reveal Animations */
     const revealObserver = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
-          entry.target.classList.add('in');
-          
-          // Trigger number counter if card contains counters
-          const counters = entry.target.querySelectorAll('.stat-num[data-target]');
-          counters.forEach(counter => animateCounter(counter));
+          entry.target.classList.add('visible');
+
+          // Trigger dynamic counter if stats are inside
+          const counters = entry.target.querySelectorAll('.stat-digit[data-count]');
+          counters.forEach(counter => {
+            const target = +counter.getAttribute('data-count');
+            const prefix = counter.getAttribute('data-prefix') || '';
+            const suffix = counter.getAttribute('data-suffix') || '';
+            let current = 0;
+            const step = target / 35;
+            const timer = setInterval(() => {
+              current += step;
+              if (current >= target) {
+                counter.innerText = prefix + target + suffix;
+                clearInterval(timer);
+              } else {
+                counter.innerText = prefix + Math.ceil(current) + suffix;
+              }
+            }, 30);
+          });
 
           revealObserver.unobserve(entry.target);
         }
       });
-    }, { threshold: 0.15 });
+    }, { threshold: 0.12 });
 
-    document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+    document.querySelectorAll('.scroll-reveal').forEach(el => revealObserver.observe(el));
 
-    /* ============================================================
-       3. Animated Number Counter Function
-    ============================================================ */
-    function animateCounter(el) {
-      const target = +el.getAttribute('data-target');
-      const prefix = el.getAttribute('data-prefix') || '';
-      const suffix = el.getAttribute('data-suffix') || '';
-      let current = 0;
-      const increment = target / 40;
-      const speed = 30;
-
-      const timer = setInterval(() => {
-        current += increment;
-        if (current >= target) {
-          el.innerText = prefix + target + suffix;
-          clearInterval(timer);
-        } else {
-          el.innerText = prefix + Math.ceil(current) + suffix;
-        }
-      }, speed);
-    }
-
-    /* ============================================================
-       4. 3D Card Hover Perspective Physics
-    ============================================================ */
-    document.querySelectorAll('.tilt').forEach(card => {
+    /* 3. 3D Card Hover Physics */
+    document.querySelectorAll('.tilt-element').forEach(card => {
       card.addEventListener('mousemove', e => {
         const rect = card.getBoundingClientRect();
         const x = e.clientX - rect.left - rect.width / 2;
@@ -1133,110 +1206,22 @@
       });
     });
 
-    /* ============================================================
-       5. Interactive Background Particle Constellation
-    ============================================================ */
-    const canvas = document.getElementById('bg-canvas');
-    const ctx = canvas.getContext('2d');
-    let particles = [];
-    let mouse = { x: null, y: null, radius: 100 };
-
-    function resizeCanvas() {
-      canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight;
-    }
-    resizeCanvas();
-    window.addEventListener('resize', resizeCanvas);
-
-    window.addEventListener('mousemove', (e) => {
-      mouse.x = e.x;
-      mouse.y = e.y;
-    });
-
-    window.addEventListener('mouseout', () => {
-      mouse.x = null;
-      mouse.y = null;
-    });
-
-    class Particle {
-      constructor() {
-        this.x = Math.random() * canvas.width;
-        this.y = Math.random() * canvas.height;
-        this.size = Math.random() * 2 + 0.5;
-        this.baseX = this.x;
-        this.baseY = this.y;
-        this.speedX = (Math.random() - 0.5) * 0.6;
-        this.speedY = (Math.random() - 0.5) * 0.6;
-      }
-      update() {
-        this.x += this.speedX;
-        this.y += this.speedY;
-
-        if (this.x < 0 || this.x > canvas.width) this.speedX = -this.speedX;
-        if (this.y < 0 || this.y > canvas.height) this.speedY = -this.speedY;
-      }
-      draw() {
-        ctx.fillStyle = 'rgba(222, 192, 241, 0.4)';
-        ctx.beginPath();
-        ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-        ctx.fill();
-      }
-    }
-
-    function initParticles() {
-      particles = [];
-      const numberOfParticles = Math.floor((canvas.width * canvas.height) / 22000);
-      for (let i = 0; i < numberOfParticles; i++) {
-        particles.push(new Particle());
-      }
-    }
-    initParticles();
-
-    function animateParticles() {
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
-      for (let i = 0; i < particles.length; i++) {
-        particles[i].update();
-        particles[i].draw();
-
-        for (let j = i; j < particles.length; j++) {
-          const dx = particles[i].x - particles[j].x;
-          const dy = particles[i].y - particles[j].y;
-          const distance = Math.sqrt(dx * dx + dy * dy);
-
-          if (distance < 90) {
-            ctx.beginPath();
-            ctx.strokeStyle = `rgba(222, 192, 241, ${0.12 - distance / 900})`;
-            ctx.lineWidth = 0.5;
-            ctx.moveTo(particles[i].x, particles[i].y);
-            ctx.lineTo(particles[j].x, particles[j].y);
-            ctx.stroke();
-          }
-        }
-      }
-      requestAnimationFrame(animateParticles);
-    }
-    animateParticles();
-
-    /* ============================================================
-       6. Project Category Filter
-    ============================================================ */
-    function filterProjects(cat) {
-      document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+    /* 4. Filter Projects */
+    function applyProjectFilter(category) {
+      document.querySelectorAll('.project-filter-btn').forEach(btn => btn.classList.remove('active'));
       event.target.classList.add('active');
       document.querySelectorAll('.project-card').forEach(card => {
-        card.style.display = (cat === 'all' || card.dataset.category === cat) ? 'flex' : 'none';
+        card.style.display = (category === 'all' || card.dataset.type === category) ? 'flex' : 'none';
       });
     }
 
-    /* ============================================================
-       7. Clipboard Toast Notification
-    ============================================================ */
-    function copyContact(text, msg) {
+    /* 5. Clipboard Toast */
+    function triggerCopy(text, msg) {
       navigator.clipboard.writeText(text);
-      const toast = document.getElementById('toast');
+      const toast = document.getElementById('contact-toast');
       toast.innerText = msg;
-      toast.classList.add('show');
-      setTimeout(() => toast.classList.remove('show'), 2200);
+      toast.classList.add('active');
+      setTimeout(() => toast.classList.remove('active'), 2200);
     }
   </script>
 </body>
