@@ -1,4 +1,3 @@
-```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -439,6 +438,7 @@
       transform: scale(1.03);
     }
 
+    /* Updated Location Badge: Dhaka, Bangladesh only */
     .hero-location-badge {
       position: relative;
       z-index: 3;
@@ -994,9 +994,10 @@
         <div class="portrait-cutout-wrap">
           <img src="WhatsApp_Image_2026-11-02_at_11.40.53_PM-removebg-preview.png" onerror="this.src='profile.jpg'" alt="Md. Al-fahidin Islam" />
         </div>
+        <!-- Location set to Dhaka, Bangladesh -->
         <div class="hero-location-badge">
           <i class="fa-solid fa-location-dot" style="color: var(--lilac);"></i>
-          <span>Mohakhali / Badda, Dhaka, Bangladesh</span>
+          <span>Dhaka, Bangladesh</span>
         </div>
       </div>
     </header>
@@ -1207,7 +1208,7 @@
     </section>
   </main>
 
-  <!-- Floating WhatsApp Chat Widget (Positioned on the RIGHT Side) -->
+  <!-- Floating WhatsApp Chat Widget on the RIGHT -->
   <a href="https://wa.me/8801741922221?text=Hi%20Md.%20Al-fahidin,%20I'm%20contacting%20you%20from%20your%20portfolio" target="_blank" class="whatsapp-float-right" title="Quick Chat on WhatsApp">
     <i class="fa-brands fa-whatsapp"></i>
   </a>
@@ -1236,9 +1237,7 @@
 
   <!-- Vanilla JavaScript Interactive Animation Engine -->
   <script>
-    /* ============================================================
-       1. Top Scroll Progress Bar & Timeline Line Fill
-    ============================================================ */
+    /* 1. Top Scroll Progress Bar & Timeline Line Fill */
     window.addEventListener('scroll', () => {
       const winScroll = document.documentElement.scrollTop || document.body.scrollTop;
       const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
@@ -1259,9 +1258,7 @@
       }
     });
 
-    /* ============================================================
-       2. Scroll Reveal IntersectionObserver & Counter Animation
-    ============================================================ */
+    /* 2. Scroll Reveal IntersectionObserver & Counter Animation */
     const revealObserver = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
@@ -1293,9 +1290,7 @@
 
     document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
 
-    /* ============================================================
-       3. 3D Card Hover Perspective Physics
-    ============================================================ */
+    /* 3. 3D Card Hover Perspective Physics */
     document.querySelectorAll('.tilt-card').forEach(card => {
       card.addEventListener('mousemove', e => {
         const rect = card.getBoundingClientRect();
@@ -1309,9 +1304,7 @@
       });
     });
 
-    /* ============================================================
-       4. Interactive Tech Matrix & Neural Network Canvas
-    ============================================================ */
+    /* 4. Interactive Tech Matrix & Neural Network Canvas */
     const canvas = document.getElementById('tech-canvas');
     const ctx = canvas.getContext('2d');
     let particles = [];
@@ -1372,7 +1365,6 @@
         particles[i].update();
         particles[i].draw();
 
-        // Connect nearby nodes
         for (let j = i; j < particles.length; j++) {
           const dx = particles[i].x - particles[j].x;
           const dy = particles[i].y - particles[j].y;
@@ -1388,7 +1380,6 @@
           }
         }
 
-        // Connect with cursor proximity
         if (mouse.x && mouse.y) {
           const mdx = particles[i].x - mouse.x;
           const mdy = particles[i].y - mouse.y;
@@ -1407,9 +1398,7 @@
     }
     renderTechNetwork();
 
-    /* ============================================================
-       5. Project Category Filter
-    ============================================================ */
+    /* 5. Project Category Filter */
     function filterProjects(cat) {
       document.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active'));
       event.target.classList.add('active');
@@ -1418,9 +1407,7 @@
       });
     }
 
-    /* ============================================================
-       6. Clipboard Copy Notification
-    ============================================================ */
+    /* 6. Clipboard Copy Notification */
     function copyContact(text, msg) {
       navigator.clipboard.writeText(text);
       const toast = document.getElementById('toast');
@@ -1431,5 +1418,3 @@
   </script>
 </body>
 </html>
-
-```
