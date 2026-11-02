@@ -192,7 +192,7 @@
       align-items: center;
       justify-content: space-between;
       gap: 16px;
-      padding: 10px 16px 10px 24px;
+      padding: 8px 16px 8px 20px;
       background: rgba(15, 3, 28, 0.82);
       backdrop-filter: blur(18px);
       -webkit-backdrop-filter: blur(18px);
@@ -200,33 +200,28 @@
       border-radius: 999px;
     }
 
+    /* Logo-Only Icon with Enlarged Dimensions & Hover Glow */
     .logo {
       display: inline-flex;
       align-items: center;
-      gap: 12px;
       text-decoration: none;
+      line-height: 0;
     }
 
     .logo img {
-      width: 38px;
-      height: 38px;
-      border-radius: 10px;
+      width: 48px;
+      height: 48px;
+      border-radius: 12px;
       object-fit: cover;
-      box-shadow: 0 0 16px rgba(222, 192, 241, 0.45);
-      border: 1px solid rgba(222, 192, 241, 0.3);
-      transition: transform 0.3s ease;
+      box-shadow: 0 0 20px rgba(222, 192, 241, 0.5);
+      border: 1px solid rgba(222, 192, 241, 0.35);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      display: block;
     }
 
     .logo:hover img {
-      transform: scale(1.08);
-    }
-
-    .logo-text {
-      font-family: var(--f-display);
-      font-weight: 800;
-      font-size: 1.25rem;
-      color: var(--lilac);
-      letter-spacing: 0.04em;
+      transform: scale(1.1);
+      box-shadow: 0 0 28px rgba(222, 192, 241, 0.75);
     }
 
     .nav ul {
@@ -938,9 +933,9 @@
 
   <!-- Navigation -->
   <nav class="nav">
-    <a href="#home" class="logo">
-      <img src="Logo.jpg" alt="Md. Al-fahidin Islam Logo" />
-      <span class="logo-text">AFI</span>
+    <!-- Enlarged Logo Only (Text Removed) -->
+    <a href="#home" class="logo" title="Md. Al-fahidin Islam">
+      <img src="Logo.jpg" alt="Logo" />
     </a>
     <ul>
       <li><a href="#services">Services</a></li>
